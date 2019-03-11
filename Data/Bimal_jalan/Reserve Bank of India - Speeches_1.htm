@@ -1,0 +1,1378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js no-flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><script async="" src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/analytics.js"></script><script type="text/javascript" charset="utf-8" id="zm-extension" src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/webrtc-patch.js" async=""></script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Reserve Bank of India - Speeches</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/modernizr-2.js"></script>
+    
+</head>
+<body onload="SetTreeStyles()">
+    <form method="post" action="./BS_SpeechesView.aspx?Id=133" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTk4NTg1MjM1ZGSBGIzp6f2YD3iTYWH0h/+TqRWD0A==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90B5E9C8">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAhauqkhYyNt7XQrF6+ENJDQlK+XrsQEVyjeDxQ0A4GYXFBwzdjZXczwplb2HKGyLlqLrBfuDtX7nV3nL+5njT0xZDpy7WJnvc3tgXY08CYLJD+rfdwJAuBoVBISURIXWlx9xf1loRXvygROM/A1O+NHJounKCGGAHd04zzVhBPZz8CnllVBJIORm8KXj3rZ8CfageOl">
+</div>
+    <input type="hidden" name="hdnYear" id="hdnYear">
+    <input type="hidden" name="hdnMonth" id="hdnMonth" value="0">
+    
+<link href="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/jquery-ui-1.css" rel="stylesheet" type="text/css">
+<link href="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/print.css" rel="stylesheet" media="print" type="text/css">
+
+<link href="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/960.css" rel="stylesheet" type="text/css">
+<link href="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/rbi.css" rel="Stylesheet" type="text/css">
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/jquery-1.js"></script>
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/jquery.js"></script>
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/ImgSaveDisable.js"></script>
+<!--<script src='//tw.netcore.co.in/smartechclient.js'></script>
+<script>
+smartech('create', 'ADGMOT35CHFLVDHBJNIG50K968AU3Q5FOE3L6REE67CQ9HGBQ58G');
+smartech('register', '4d6884e503ecf55a3339a37e98b711da');
+smartech('identify', '');
+smartech('dispatch', 1, { });
+</script>-->
+<script type="text/javascript">
+
+//Redirect to mobile site start
+    function detectmob() {
+        if (screen.width <= 599 || screen.Height <= 975) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (detectmob()) {
+       window.location.href = "https://m.rbi.org.in" + window.location.pathname;
+		
+       
+    }
+	//Redirect to mobile site End
+    $(document).ready(function () {
+        Search();
+    });
+
+    function Search() {
+        highlightTextAutocomplete();
+        $(".autoSuggest").autocomplete({
+
+
+            source: function (request, response) {
+                var param = { keyWord: document.getElementById('txtSearch').value };
+
+                $.ajax({
+                    url: "../Home.aspx/GetKeywords",
+                    data: JSON.stringify(param),
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+
+                        if (data.d.length > 0) {
+                            response($.map(data.d, function (item) {
+                                return {
+                                    value: RemoveSpecialChars(item)
+
+                                }
+                            }))
+                        }
+                        else {
+                            response([{ label: "No results found", value: ""}]);
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+
+            //            select: function (event, ui) {
+            //                if (ui.item.value != "") {
+            //                    window.open("/scripts/SearchResults.aspx?search=" + ui.item.value, '_blank');
+            //                }
+            //            },
+            minLength: 3
+
+        });
+    }
+
+    function highlightTextAutocomplete() {
+
+        var oldFn = $.ui.autocomplete.prototype._renderItem;
+
+        $.ui.autocomplete.prototype._renderItem = function (ul, item) {
+
+            var t = String(item.value).replace(
+                new RegExp(this.term, "gi"),
+                "<span class='ui-state-highlight'>$&</span>");
+            if (item.value != "") {
+                return $("<li class='borderAutocomplete'></li>")
+                  .data("item.autocomplete", item)
+                  .append("<a>" + t + "</a>")
+                  .appendTo(ul);
+            }
+
+            else {
+                return $("<li></li>")
+                  .data("item.autocomplete", item)
+                  .append("")
+                  .appendTo(ul);
+            }
+        };
+    }
+
+
+    function RemoveSpecialChars(inputText) {
+        var filteredString = inputText.replace(/[\*\^\'\!\@\$\.\#\(\)\-\?\<\>\;\"\&\+\{\}\:]/g, '');
+        //alert(filteredString);
+        return filteredString;
+    }
+    //    jQuery(document).ready(function () {
+    //        var xmlhttp;
+    //        jQuery("#txtSearch").autocomplete(
+    //                    {
+    //                        minLength: 3,
+    //                        delay: 0,
+    //                        source: function (request, response) {
+    //                            if (!xmlhttp) {
+    //                                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+    //                                    xmlhttp = new XMLHttpRequest();
+    //                                }
+    //                                else {// code for IE6, IE5
+    //                                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    //                                }
+    //                            }
+    //                            else if (xmlhttp.readyState != 0) {
+    //                                xmlhttp.abort();
+    //                            }
+    //                            xmlhttp.onreadystatechange = function () {
+    //                                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    //                                    fetchedKeywords = xmlhttp.responseText.split("'");
+    //                                    
+    //                                    if (fetchedKeywords.length > 10) {
+    //                                        fetchedKeywords.splice(10, fetchedKeywords.length - 10);
+    //                                    }
+    //                                    if (fetchedKeywords != "") response(fetchedKeywords);
+    //                                    else response(null);
+    //                                }
+    //                            }
+    //                            var input = document.getElementById("txtSearch").value;
+    //                            xmlhttp.open("POST", "/Webservice/KeywordSearch.ashx?q=" + input, true);
+    //                            xmlhttp.send();
+    //                        }
+    //                    });
+    //    });
+
+    function LoadSearchData(id, key) {
+        if (id == "txtSearch") {
+            if (key == 13) {
+                validateSearchText();
+                return false;
+            }
+        }
+        else validateSearchText();
+        return true;
+    }
+    function validateSearchText() {
+        if (validation()) {
+            var strloc = new String(document.location.href.toString());
+            if (strloc.indexOf("SearchResults.aspx") == -1) {//             
+                window.open("/scripts/SearchResults.aspx?search=" + document.getElementById("txtSearch").value);
+            }
+            else window.open("/scripts/SearchResults.aspx?search=" + document.getElementById("txtSearch").value, '_parent');
+        }
+    }
+    function validation() {
+        strSearch = trim(document.getElementById('txtSearch').value);
+        if (strSearch == "") { alert('Please enter the search text'); return false; }
+        else {
+            //var strFilterChars = new RegExp("[~`!@#$%^&*()_+-={}\\[\\]:/\\\\\";|'<>,.?]");
+            var strFilterChars = new RegExp("^[0-9a-zA-Z ]*$");
+            if (!strFilterChars.test(strSearch)) { alert("Please remove special characters from search text"); return false; }
+        }
+        return true;
+    }
+    function trim(value) {
+        value = value.replace(/^\s+/, '');
+        value = value.replace(/\s+$/, '');
+        return value;
+    }
+</script>
+
+    <style type="text/css">
+    .blink_msm1 
+{
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 3s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+</style>
+<div class="top_setting">
+    <div class="container_12">
+        <div class="grid_5 top_settings">
+            <a href="#mainsection">Skip to main content </a>
+        </div>
+        <div id="UsrFontCntr_tblThemes" style="float: right" class="grid_4 prefix_3 top_settings">
+            <span class="fonts">
+                <a id="UsrFontCntr_LinkBtnFontIncrease" title="Increase Font Size" href="javascript:__doPostBack('UsrFontCntr$LinkBtnFontIncrease','')" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/font-increase.gif" alt="Increase Font Size"></a></span>
+            <span class="fonts">
+                <a id="UsrFontCntr_LinkBtnFontRegular" class="aspNetDisabled" title="Regular Font Size" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/font-reset.gif" alt="Regular Font Size"></a></span>
+            <span class="fonts">
+                <a id="UsrFontCntr_LinkBtnFontDecrease" title="Decrease Font Size" href="javascript:__doPostBack('UsrFontCntr$LinkBtnFontDecrease','')" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/font-decrease.gif" alt="Decrease Font Size"></a></span>
+            <span class="black">
+                <a id="UsrFontCntr_LinkBtnAccessibilty" title="Apply Dark Theme" href="javascript:__doPostBack('UsrFontCntr$LinkBtnAccessibilty','')" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/dark-theme.gif" alt="Apply Dark Theme"></a></span>
+            <span class="white">
+                <a id="UsrFontCntr_LinkBtnUndoAccessibilty" class="aspNetDisabled" title="Apply Normal Theme" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/bright-theme.gif" alt="Apply Normal Theme"></a></span>
+            <a onclick="javascript:window.print();" id="A1" title="Print This Page">
+                <img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/print-icon.png" alt="Print this page" class="print"></a>
+            <div style="float: right">
+                <label style="margin-right: 6px;color: #000000;">
+                    Language</label><a class="lnk-language" id="lnkhindi" title="Hindi site" href="https://www.rbi.org.in/hindi/Home.aspx">हिंदी</a></div>
+                    
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+</div>
+<div class="container_12">
+    <div class="grid_5" role="banner">
+        <h1 class="logo">
+            <a href="https://rbi.org.in/home.aspx">
+                <img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/rbi-company-logo.jpg" alt="Reserve Bank of India"></a></h1>
+    </div>
+    <div class="grid_5" role="search" style="float: right" align="right">
+        <label for="searchbox" class="search_label">
+            Search the Website</label>
+        <input name="UsrFontCntr$txtSearch" type="text" maxlength="103" id="txtSearch" class="search_box autoSuggest ui-autocomplete-input" onkeydown="return LoadSearchData('txtSearch',event.keyCode);" placeholder="Search" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+        <button id="btnSearch" onclick="return LoadSearchData('btnSearch',event.keyCode);" type="button" class="search_button">
+            Search</button>
+    </div>
+    <div class="clearfix">
+    </div>
+</div>
+<!--  NAVIGATION START-->
+<nav role="navigation">
+    <div class="top_menu">
+      <div class="container_12">
+        <div class="grid_12">
+          <div id="mydroplinemenu" class="droplinebar">
+            <ul>
+              <li><a href="https://rbi.org.in/home.aspx">Home</a></li>
+              <li><a href="https://rbi.org.in/Scripts/AboutusDisplay.aspx">About Us</a></li>
+              <li><a href="https://rbi.org.in/Scripts/NotificationUser.aspx">Notifications</a></li>
+              
+              <li><a href="https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx">Press Releases</a></li>
+              <li><a href="https://rbi.org.in/Scripts/BS_ViewSpeeches.aspx">Speeches</a></li>
+              <li><a href="#">Publications<img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/down.gif" class="downarrowclass" style="border:0; padding-left: 5px"></a>
+                <ul style="display: none; visibility: visible; width: 1060px;">
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Annual">Annual</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=HalfYearly">Half-Yearly</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Quarterly">Quarterly</a></li>
+		  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Bimonthly">Bi-monthly</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Monthly">Monthly</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Weekly">Weekly</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Occasional">Occasional</a></li>
+                   <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Reports">Reports</a></li>
+		   <li><a href="https://rbi.org.in/Scripts/OccasionalPublications.aspx?head=Working%20Papers">Working Papers</a></li>
+                  <!--<li><a href="/Scripts/Publications.aspx?publication=Lectures">Lectures</a></li>-->
+                </ul>
+              </li>
+	      <li><a href="https://rbi.org.in/Scripts/Lectures.aspx">Memorial Lectures</a></li>
+	      <li><a href="https://rbi.org.in/Scripts/MSM_MintStreetMemos.aspx"><span>Mint Street Memos</span></a></li>
+	      <li><a href="#">Research<img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/down.gif" class="downarrowclass" style="border:0; padding-left: 5px"></a>
+	     <ul style="display: none; visibility: visible; width: 1060px;">
+             <li><a href="https://rbi.org.in/Scripts/ExternalResearchSchemes.aspx">External Research Schemes</a></li>
+             <li><a href="https://rbi.org.in/Scripts/QuarterlyPublications.aspx?head=Occasional%20Papers">RBI Occasional Papers</a></li>
+             <li><a href="https://rbi.org.in/Scripts/OccasionalPublications.aspx?head=Working%20Papers">Working Papers</a></li>
+             <li><a href="https://rbi.org.in/Scripts/BS_ViewBulletin.aspx">RBI Bulletin</a></li>
+	     <li><a href="https://rbi.org.in/Scripts/Project1.aspx">History</a></li>
+             <li><a href="https://rbi.org.in/Scripts/Occas_DRG_Studies.aspx">DRG Studies</a></li>
+             <li><a href="https://rbi.org.in/Scripts/KLEMS.aspx">KLEMS</a></li>
+			 <li><a href="https://rbi.org.in/Scripts/StateStatisticsFinances.aspx">State Statistics and Finances</a></li>
+            
+           </ul>
+	   </li>
+              <li><a href="#">Statistics<img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/down.gif" class="downarrowclass" style="border:0; padding-left: 5px"></a>
+                <ul style="display: none; visibility: visible; width: 1060px;">
+                  <li><a href="https://rbi.org.in/Scripts/Statistics.aspx">Data Releases</a></li>
+                  
+                  <li><a href="https://dbie.rbi.org.in/DBIE/dbie.rbi?site=home" target="_blank">Database on Indian Economy</a></li>
+		  <li><a href="https://rbi.org.in/scripts/FS_PDS.aspx">Public Debt Statistics</a></li>
+                </ul>
+              </li>
+             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+<!--  NAVIGATION END-->
+<!--HEADER END-->
+<input type="submit" name="UsrFontCntr$btn" value="" id="btn" style="visibility: hidden; height: 0px; width: 0px;">
+
+
+    <div>
+        <div class="container_12">
+            <a id="mainsection" name="mainsection"></a>
+            <div class="grid_12 breadcrumbs">
+                <ul>
+                    <li><a href="https://rbi.org.in/Home.aspx">Home</a></li>
+                    <span id="lblNav"><li><a href="https://rbi.org.in/scripts/BS_ViewSpeeches.aspx">Speeches</a></li></span>
+                </ul>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="grid_11 omega right_blue_border">
+                <div id="annual" class="text1">
+                    
+                    <h2 class="page_title">
+                        Speeches</h2>
+                    <div>
+                        <div id="doublescroll">
+                            <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                                </table><table class="tablebg" width="100%"><tbody><tr><td class="tableheader"><a target="_blank" href="http://rbidocs.rbi.org.in/rdocs/Speeches/PDFs/38340.pdf"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/pdf.gif" border="0" align="absmiddle"></a> (32 kb)</td></tr><tr><td class="tableheader" align="right"><b> Date : </b>Aug 14, 2003</td></tr><tr><td class="tableheader" align="center"><b>Exchange Rate Management: An Emerging Consensus?</b><br>(Dr. Bimal Jalan, Governor, Reserve Bank of India,at 14th National Assembly of Forex Association of India on August 14, 2003)</td></tr><tr class="tablecontent2"><td><p align="JUSTIFY"></p><p align="JUSTIFY">	I am very happy to be here with you on the occasion of the 14<sup>th</sup>
+ National Assembly.  This annual gathering of our Forex specialists is a
+ very special occasion for everyone interested in the evolution of forex
+ market in India – not only the dealers and market participants, but 
+also the RBI, Government and outside experts interested in appropriate 
+macro-economic management for higher growth and the greater good of our 
+people.  It provides all of us with an opportunity to review recent 
+developments  in forex markets against the background of global 
+developments in a fast changing world economic scenario and modify our 
+own policy and approach.  I am, therefore, delighted to be with you once
+ again.</p><p align="JUSTIFY"></p><p align="JUSTIFY">2.	As you know, RBI
+ is in regular touch, formally and informally, with your association to 
+review market developments.  My senior colleagues and I  have also 
+benefited from your advice and, as you are aware, a large number of 
+measures have now been put in place to liberalise our regulations in 
+respect of foreign exchange transactions.  With your permission, today, 
+on this special occasion, I would like to deal briefly with some of the 
+longer term policy issues in respect of exchange rate and reserves 
+management.  Several of these issues have also been debated in various 
+international fora. In the context of upsurge in our reserves in recent 
+years and the appreciating trend in the external value of the rupee, 
+there has also been considerable domestic discussion of these issues.</p><p align="JUSTIFY"></p><p align="JUSTIFY">3.
+	You will recall that the last time I had addressed your Association was
+ in December 2000 -  nearly 2 ½  years ago – on the occasion of the 21<sup>st</sup>
+ Asia Pacific Forex Congress.  That meeting was taking place against the
+ background of the Asian crisis in 1997-98. The Asian region had just 
+come out of the forex crisis of a very destabilising kind.  I had used 
+that occasion to review the on-going debate on management of the 
+external sector, particularly the appropriate exchange rate systems, the
+ appropriate intervention policy, and the foreign  exchange reserve 
+policy. Soon after the Asian crisis, these subjects had figured very 
+prominently in the  discussions on International Financial Architecture 
+in various fora, such as IMF, the World bank, G20, Financial Stability 
+Forum and the Bank for International Settlements.</p><p align="JUSTIFY"></p><p align="JUSTIFY">4.
+	At that time, while reviewing the state of the debate,  I had mentioned
+  that a worldwide consensus on several issues was still evolving.  
+Today,  while "consensus" may be too strong a word, I believe that there
+ is a fair degree of convergence in the dominant international opinion 
+among experts and various specialised institutions on many of these 
+issues.  Let me summarise some of the main conclusions which have 
+emerged in the last 2 or 3 years on the management of the external 
+sector.  Once again, I should  emphasise that, given widely different 
+economies of the world that we are talking about, there is no global 
+consensus as such or unity of views.  However, at present, as I see it, 
+there is certainly a "dominant" view of what is right and appropriate, 
+which is increasingly commanding international acceptance.</p><p align="JUSTIFY"></p><p align="JUSTIFY">5.	Thus, on the question of the <u>appropriate exchange rate regime</u>,
+ a fixed exchange rate regime (even with a Currency Board) is clearly 
+out of favour.  The Brazilian and Argentinian crisis, after the Asian 
+crisis, came as a rude shock.  Even strong Currency Board type  
+arrangements of a fixed peg <i>vis-à-vis </i>dollar were found to be 
+unviable.  You will recall that, soon after the Asian crisis, the widely
+ accepted theoretical position was that a country had the choice of 
+either giving up monetary independence and setting up a Currency Board 
+or giving up the stable currency objective and letting the exchange rate
+ float freely so that monetary policy could then be directed to the 
+objectives of inflation control.    There is a shift in this paradigm.  
+The possibility of having a viable fixed rate mechanism has been 
+generally discarded,  and the dominant view now is that, for most 
+countries floating or flexible rates are the only sustainable way of 
+having a less crisis-prone exchange rate regime.</p><p align="JUSTIFY"></p><p align="JUSTIFY">6.
+	In regard to the desirable degree of flexibility in exchange rates, 
+opinions and practices vary.  But a completely "free" float, without 
+intervention, is clearly out of favour except perhaps in respect of a 
+few global or reserve currencies.  And, in respect of these currencies 
+also (say, Euro and Dollar), concerns are expressed at the highest 
+levels if the movement is sharp in either direction – recently, for 
+example, when Euro was strengthening at a fast pace.  Studies by the IMF
+ and several experts also  show that by far, the most common exchange 
+rate regime adopted by countries, including industrial countries, is not
+ a free float.  Most of the countries have adopted intermediate regimes 
+of various types, such as, managed floats with no pre-announced path, 
+and independent floats with foreign exchange intervention moderating the
+ rate of change and preventing undue fluctuations.  By and large, 
+barring a few, countries have "managed" floats and Central Banks 
+intervene periodically.  This has also been true of industrial 
+countries.  In the past, the U.S., the EU and the U.K. have  also 
+intervened at one time or another.  Thus, irrespective of the pure 
+theoretical position in favour of a free float, the external value of 
+the currency continues to be a matter of concern to most countries, and 
+most central banks.</p><p align="JUSTIFY"></p><p align="JUSTIFY">7.	The 
+reason why intervention by most central banks in forex markets has 
+become necessary from time to time is primarily because of two reasons. 
+ A fundamental change that has taken place in recent years is the 
+importance of capital flows in determining exchange rate movements as 
+against trade deficits and economic growth, which were important in the 
+earlier days.  The latter do matter, but only over a period of time.  
+Capital flows, on the other  hand, have become the primary determinants 
+of exchange rate movements on a day-to-day basis.  Secondly, unlike 
+trade flows, capital flows in "gross" terms which affect exchange rate 
+can be several times higher than "net" flows on any day.  These are also
+ much more sensitive to what everybody else is saying or doing than is 
+the case with foreign trade or economic growth.  Therefore, herding 
+becomes unavoidable.  I am sure you will agree that all dealers prefer 
+to be wrong with everyone else rather than being wrong alone!</p><p align="JUSTIFY"></p><p align="JUSTIFY">8.
+	A related issue, which is a corollary of the prevalent intermediate 
+regimes in respect of exchange rates, concerns the need, if any,  for 
+foreign exchange reserves.  In a regime of free float, it could be 
+argued that there was really no need for reserves.  If demand for 
+foreign exchange is higher than supply, exchange rates will depreciate 
+and equilibrate demand and supply over time.  If supply exceeded demand,
+ exchange rates will appreciate and sooner or later, the two will 
+equalise at some price.    However, today in the light of volatility 
+induced by capital flows and the self-fulfilling expectations that this 
+can generate, there is now a growing consensus that  emerging market 
+countries should, as a matter of policy,  maintain "adequate" reserves. 
+ How adequacy is to be defined is also becoming clearer.  Earlier, the 
+rule used to be defined in terms of number of  months of imports.  Now, 
+increasingly it is felt that reserves should at least  be sufficient to 
+cover likely variations in capital flows or the "liquidity-at-risk".  
+(However, there is as yet no consensus on the upper limit for reserves. 
+ Even after an "adequate" level is reached, reserves may continue to 
+increase if capital inflows are strong and central banks decide to 
+intervene in order to moderate the degree of appreciation.)</p><p align="JUSTIFY"></p><p align="JUSTIFY">9.
+	To sum up, it seems that the debate on appropriate policies relating to
+ forex markets has now converged around some generally accepted views.  
+Among these, as I mentioned are: (a) exchange rates should be flexible 
+and not fixed or pegged;  (b) countries should be able to intervene or 
+manage exchange rates – to at least some degree – if movements are 
+believed to be destablising in the short run; and (c) reserves should at
+ least be sufficient to take care of fluctuations in capital flows and 
+"liquidity at risk".</p><p align="JUSTIFY"></p><p align="JUSTIFY">10.	
+Let me now briefly deal with some issues of practical importance in the 
+management of forex markets in India, which have figured prominently in 
+the media and expert commentary. I will first take up 2 or 3 matters 
+which are rather straight-forward and on which our policy stance is also
+ equally "unambiguous" and clear-cut. Then I will move to, and conclude 
+with, a discussion of the appropriate exchange rate policy for India in 
+the current situation.</p><p align="JUSTIFY"></p><p align="JUSTIFY">11.	A frequently discussed question is about Capital Account Convertibility (CAS), <i>i.e.</i>
+ when is India going to move to full CAC? As you are  aware, we have 
+already liberalized and deregulated a whole host of capital account 
+transactions. It is probably fair to say that for most  transactions 
+which are required for business or personal convenience, the rupee is, 
+for all practical purposes, convertible. In cases, where specific 
+permission  is required for transactions above a high monetary ceiling, 
+this permission is also generally forthcoming. It is also the declared 
+policy of the Government and the RBI to continue with this process of 
+liberalization.  In this sense, Capital Account Convertibility continues
+ to be a desirable objective for all investment and business related 
+transactions and India should be able to achieve this objective in not 
+too distant a future.</p><p align="JUSTIFY"></p><p align="JUSTIFY">12.	There are, however, two areas where we would need to be extremely cautious – one is unlimited access to <u>short-term</u>
+ external commercial borrowing for meeting working capital and other 
+domestic requirements. The other area concerns the question of providing
+ unrestricted freedom to domestic residents to convert their domestic 
+bank deposits and idle assets (such as, real estate), in response to 
+market developments or exchange rate expectations. </p><p align="JUSTIFY"></p><p align="JUSTIFY">13.
+	In respect of short-term external commercial borrowings, there is 
+already a strong international consensus that emerging markets should 
+keep such borrowings relatively small in relation to their total 
+external debt or reserves. Many of the financial crises in the 1990s 
+occurred because the short-term debt was excessive. When times were 
+good, such debt was easily accessible.  The position, however, changed 
+dramatically in times of external pressure. All creditors who could 
+redeem the debt did so within a very short period, causing extreme 
+domestic financial vulnerability. The occurrence of such a possibility 
+has to be avoided, and we would do well to continue with our policy of 
+keeping access to short-term debt limited as a conscious policy at all 
+times – good and bad.</p><p align="JUSTIFY"></p><p align="JUSTIFY">14.	
+So far as the free convertibility of domestic assets by residents is 
+concerned, the issues are somewhat more fundamental. It has to do with 
+the differential impact of "stock" and "flows" in determining external 
+vulnerability.   The day-to-day movement in exchange rates is determined
+ by "flows" of funds, <i>i.e.</i> by demand and supply of spot or 
+forward transactions in the market. Now, suppose the exchange rate is 
+depreciating unduly sharply (for whatever reasons) and is expected to 
+continue to do so for the near future. Now, further suppose that 
+domestic residents, therefore, decide – perfectly rationally and 
+reasonably – that they should convert a part or whole of their stock of 
+domestic assets from domestic currency to foreign currency. This will be
+ financially desirable as the domestic value of their converted assets 
+is expected to increase because of anticipated depreciation. And, if a 
+large number of residents so decide simultaneously within a short period
+ of time, as they may, this expectation would become self-fulfilling. A 
+severe  external crisis is then unavoidable.</p><p align="JUSTIFY"></p><p align="JUSTIFY">15.
+	Consider India’s case, for example.  Today, our reserves are high and 
+exchange rate movements are, by and large, orderly.  Now, suppose there 
+is an event which creates external uncertainty, as for example, what 
+actually happened at the time of the Kargil or the imposition of 
+sanctions after Pokhran, or the oil crises earlier.   Domestic stock of 
+bank deposits in rupees in India is presently close to US $ 290 billion,
+ nearly three and a half times our total reserves.  At the time of 
+Kargil or Pokhran  or the oil crises, the multiple of domestic deposits 
+over reserves was in fact several times higher than now.  One can 
+imagine what would have had happened to our external situation, if 
+within a very short period, domestic residents decided to rush to their 
+neighbourhood banks and convert a significant part of these deposits 
+into sterling, euro or dollar. </p><p align="JUSTIFY"></p><p align="JUSTIFY">16.
+	No emerging market exchange rate system can cope with this kind of 
+contingency. This may be an unlikely possibility today, but it must be 
+factored in while deciding on a long term policy of free convertibility 
+of "stock" of domestic assets. Incidentally, this kind of eventuality is
+ less likely to occur in respect of industrial countries with  
+international  currencies such as Euro or Dollar, which are held by 
+banks, corporates,  and other entities  as part of their long-term 
+global asset portfolio  (as distinguished from emerging market 
+currencies in which banks and other intermediaries normally take a  
+daily long or short position for purposes of currency trade). </p><p align="JUSTIFY"></p><p align="JUSTIFY">17.
+	Another issue, which has figured prominently in the current debate, 
+relates to foreign exchange reserves.  As is well known, India’s foreign
+ exchange reserves have increased substantially in the past few years 
+and are now among one of the largest in the world.  The fact that most 
+of  the constituents of India’s balance of payments are showing positive
+ trends – on the current as well as capital accounts – is a reflection 
+of the increasing competitiveness of the Indian economy and strong 
+confidence of the international community in India’s growth potential.  
+For the first time after our Independence 56 years ago, the fragility of
+ the balance of payments is no longer a concern of policy makers.  This 
+is a highly positive development and regarded as such by the country at 
+large.</p><p align="JUSTIFY"></p><p align="JUSTIFY">18.	Nevertheless, 
+there are two concerns that have been expressed by expert commentators –
+ one is about the "cost" of additional reserves, and second concerns the
+ impact of "arbitrage" in inducing higher inflows.  So far as the cost 
+of additional reserves is concerned, it needs to be borne in mind  that 
+the bulk of additions to reserves in the recent period is on account of 
+non-debt creating inflows.  India’s total external debt, including NRI  
+(Non-Resident Indian) deposits, has increased relatively slowly as 
+compared with the increase in reserves, particularly in the last couple 
+of years.  In fact, India pre-paid more than $ 3 billion of external 
+debt earlier this year.  It may also be mentioned that rates of interest
+ paid on NRI deposits and multilateral loans in foreign currency are in 
+line with or lower than prevailing international interest rates.</p><p align="JUSTIFY"></p><p align="JUSTIFY">19.
+	On NRI rupee deposits, interest rates in the last couple of years have 
+been in line with interest rates on deposits by residents, and are 
+currently even lower than domestic interest rates.  So far as other 
+non-debt creating inflows (<i>i.e</i>., foreign direct investment, 
+portfolio investment or remittances) are concerned, such  inflows by 
+their very nature are  commercial in nature and enjoy the same returns 
+and risks, including exchange rate risk,  as any other form of domestic 
+investment or remittance by residents.  The cost to the country of such 
+flows is the same whether  they are added to reserves or are matched by 
+equivalent foreign currency outflow on account of higher imports or 
+investments abroad by  residents.  On the whole, under present 
+conditions, it seems that the "cost" of additional reserves is really a 
+non-issue from a broader macro-economic point of view.</p><p align="JUSTIFY"></p><p align="JUSTIFY">20.
+	Indian interest rates have come down substantially in the last three or
+ four years.  They are, however, still higher than those prevailing in 
+the U.S., Europe, U.K. or Japan.  This provides an "arbitrage" 
+opportunity to holder of liquid assets abroad, who may take advantage of
+ higher domestic interest rates in India leading to a possible 
+short-term upsurge in capital flows.   However, there are several 
+considerations, which indicate that "arbitrage" <i><u>per se</u></i> is 
+unlikely to have been a primary factor in influencing remittances or 
+investment decisions by NRIs or foreign entities in the recent period.  
+Among these are :</p><p align="JUSTIFY"></p><ul><li><p align="JUSTIFY">The
+ minimum period of deposits by NRIs in Indian rupees is now one year, 
+and the interest rate on such deposits is subject to  a ceiling rate of 
+2.5 per cent over Libor.  This is broadly in line with one-year forward 
+premium on the dollar in the Indian market (interest rates on dollar 
+deposits by NRIs are actually below Libor).</p></li><p></p></ul><p align="JUSTIFY"></p><ul><li><p align="JUSTIFY">Outside
+ of NRI deposits, investments by Foreign Institutional Investors (FIIs) 
+in debt funds is subject to an overall cap of only $ 1 billion in the 
+aggregate.  In other words, the possibility of arbitrage by FIIs in 
+respect of pure debt funds is limited to this  low figure of $ 1 billion
+ (excluding investments in a mix of equity and debt funds). </p></li><p></p></ul><p align="JUSTIFY"></p><ul><li><p align="JUSTIFY">Interest
+ rates and yields on liquid securities are highly variable abroad as 
+well as in India, and the differential between the two rates can change 
+very sharply within a short time  depending on market expectations.  It 
+is interesting to note that the yield on 10 year Treasury bills in the 
+U.S. had risen to about 4.4 per cent as compared with 5.6  per cent on 
+Government bonds of similar maturity in India at the end of July  2003. 
+ Taking into account the forward premia on dollars and yield 
+fluctuations, except for brief period, there is likely to be little 
+incentive to send  large amounts of capital to India merely to take 
+advantage of the interest  differential. </p></li><p></p></ul><p align="JUSTIFY"></p><p align="JUSTIFY">21.
+	On the whole, it is likely that external flows into India have been 
+motivated by factors other than pure arbitrage.  Figures on sources of 
+reserve accretion available upto the end of last year (2002-03) confirm 
+this view.  It is also pertinent to note that domestic interest rates 
+among  industrial countries also vary considerably.  For example, in 
+Japan, they are close to zero.  In the U.K., they are above 4 per cent, 
+and in the U.S. about 1.5 per cent.  There is no evidence that capital 
+has been moving out of U.S. to U.K. or Europe merely on account of 
+interest differential.  Within a certain low range, capital flows are 
+likely to be more influenced by outlook for growth and inflation than 
+pure arbitrage even among industrial countries with full CAC.  </p><p align="JUSTIFY"></p><p align="JUSTIFY">22.
+	Another point which has been forcefully put forward by several experts 
+in the context of rising reserves, is that India should use its reserves
+ for increasing investment for further development of the country rather
+ than  keep them as liquid assets.  It is argued that it is paradoxical 
+for a developing country to have a current and capital account surplus, 
+and thereby add to its reserves, rather than use foreign savings to 
+enhance the rate of investment in the economy.  </p><p align="JUSTIFY"></p><p align="JUSTIFY">23.
+	In principle, this point is valid.  There is no doubt that in our 
+present situation, maximum support has to be given to increasing the 
+level of investment, particularly in the infrastructure sector.  It is 
+for this reason that RBI in the recent period has been following a soft 
+interest rate policy in an environment of low inflation.  However, at 
+the same time, it must be emphasized that there is very little that RBI,
+ (or, for that matter,  Government) can directly do to use additional 
+reserves for investment.  The equivalent rupee resources have already 
+been released by the RBI to recipients of foreign exchange, and 
+equivalent rupee liquidity has already been created.  The decision on 
+whether to invest, consume or deposit these additional rupee resources 
+lies with recipients, and not with the RBI.  By all means, let us urge 
+them to invest, but there is not much of a case for pointing a finger at
+ additional reserves as a "cause" of lower than desirable level of 
+investment activity in the economy.</p><p align="JUSTIFY"> </p><p align="JUSTIFY">24.
+	Let me now come to my  last point, which is of considerable present-day
+ interest in India in the context of high and rising reserves, easy 
+liquidity, low interest rates and the weakening dollar, i.e.,   what 
+should be the correct or right policy stance for the management of  
+exchange rate in India in the present environment? In RBI’s periodic 
+credit policy statements,  as well as other public statements, RBI has 
+highlighted the main pillars of its strategy for the management of the 
+exchange rate. These are: RBI does not have a fixed  "target" for the 
+exchange rate which it tries to defend or pursue over time; RBI is 
+prepared to intervene in the market to dampen excessive volatility as 
+and when necessary; RBI’s purchases or sales of foreign currency are 
+undertaken through a number of banks and are generally discreete and 
+smooth; and market operations and exchange rate movement  should, in 
+principle,   be transaction-oriented rather than purely speculative in 
+nature.</p><p align="JUSTIFY"></p><p align="JUSTIFY">25.	It is perhaps 
+fair to say that the actual results of the exchange rate policy followed
+  by the RBI, since the Asian crisis in particular, have been highly 
+positive so far.  In addition to sharp increase  in reserves and 
+generally "orderly" movements in exchange rates with lower volatility, 
+the confidence level of domestic and foreign investors in the Indian 
+external sector policies is strong.  India’s policies have also been 
+described by the IMF as being "comparable to the global best practices" 
+in a recent study of 20 select industrial and developing countries.  
+Interestingly, a leading global news agency, in an international 
+journal, has recently described India’s currency model as being "ideal" 
+for Asia.  India is now one of the very few developing countries which 
+has set up its own clearing house for dollar-rupee transaction with the 
+concurrence of the Federal Reserve System, New York.</p><p align="JUSTIFY"></p><p align="JUSTIFY">26.
+	In the last few months, however, when the dollar has been depreciating 
+against major currencies, and rupee has been appreciating against the 
+dollar (albeit slowly), a number of suggestions have been made by 
+experts and others calling for a  shift in RBI’s exchange rate  
+policies.    There are, in the main, three alternative approaches that 
+have been suggested for consideration:</p><p align="JUSTIFY"></p><ul><li><p align="JUSTIFY">One
+ view advanced  by several distinguished economists, including Prof. 
+Kenneth Rogoff of IMF during his recent visit to India, is that rupee 
+should be allowed to appreciate freely in line with market trends.  
+According to this view, there is no strong case for RBI’s further 
+intervention as reserves are already very high.  RBI’s purchases create 
+substantial additional domestic liquidity, which may be destabilising  
+in the long run.  There is also no evidence, in their opinion, that 
+unconstrained appreciation or volatility would affect growth prospects 
+or lead to any other macro-economic problem.</p></li><p></p></ul><p align="JUSTIFY"></p><ul><li><p align="JUSTIFY">An
+ exactly opposite view, which, among others,  has been   recently 
+articulated by an important all-India industry association, is that RBI 
+should intervene more aggressively in the market to further reduce the 
+degree of appreciation.  The main argument in favour of this view is 
+that India must maintain its  global "competitiveness", particularly in 
+relation to China which has a fixed  exchange rate with the dollar and 
+whose currency  has been depreciating along with it.</p></li><p></p></ul><p align="JUSTIFY"></p><ul><li><p align="JUSTIFY">A
+ third view, which has been recently put forward by a leading economic 
+journal, among others, is that RBI should pursue what it has referred to
+ as a policy of "calculated volatility".  It has been argued that the 
+present policy of  controlled volatility has provided virtually 
+risk-less gain to market participants since the rupee has been expected 
+to appreciate substantially and continuously over the past few months.  
+According to this view, in order to prevent excessive capital inflows 
+during this period, RBI should have allowed the exchange rate to 
+"overshoot" quickly the <u>targeted</u> exchange rate of, say, Rs.46.20 
+(or any other number) to, say, Rs.45.50.  Thereafter, it should have 
+allowed the rupee to depreciate slowly, but not necessarily smoothly, to
+ the above targeted number over a period of next few months.  In 
+essence, this proposal is akin to a policy of (announced or unannounced)
+ fixed exchange rate  within a wider band.</p></li><p></p></ul><p align="JUSTIFY"></p><p align="JUSTIFY">27.
+	The RBI welcomes the current debate.  Reserves, at present,  are 
+certainly at a level which is more than enough to meet any foreseeable 
+contingency.  It is also clear that, in the present period,  capital 
+inflows and remittances have been strong, requiring continuous domestic 
+liquidity management.  In principle, therefore, it would be nice if an 
+alternative viable exchange rate management system could be put in place
+ which would avoid excessive build-up of reserves and domestic liquidity
+ and, at the same time, maintain India’s external competitiveness with 
+low inflation and low interest rates.</p><p align="JUSTIFY"></p><p align="JUSTIFY">28.
+	In theory, each of the above alternative approaches has some merit.   
+However, it is not entirely clear that they can be put into practice 
+without causing substantial instability or uncertainty and possible 
+emergence of macro-economic problems which are worse than what they are 
+trying to solve.  An implicit assumption in two of the above  
+alternatives is that there is a level at which, after initial fast 
+appreciation, the exchange rate will either stabilise or turn around.  A
+ further implicit assumption is that the level (whatever it is) is 
+either already known or will become known to the market as it is 
+approached.</p><p align="JUSTIFY"></p><p align="JUSTIFY">29.	RBI’s past 
+experience does not suggest that these assumptions are valid.  It would 
+be recalled that there have been periods when rupee exchange rates have 
+been relatively more volatile and movements have been sharper.  However,
+ during periods of sharper appreciation, instead of inflows declining 
+and demand for foreign currency rising, it was noticed that actual 
+market behaviour was the opposite.  The opposite was true during periods
+ of sharp depreciation.  Exchange rate expectations had  their own 
+momentum and  were often self-fulfilling.  There must, of course, be a 
+level where these expectations will reverse.   However, if that level, 
+because of "momentum" trading in imperfect and thin markets happens to 
+be significantly out of line with "fundamentals", considerable  
+instability and substantial overvaluation (or under valuation) may 
+result.  Such an outcome may do more harm than good to continued 
+confidence in a country’s exchange rate system. </p><p align="JUSTIFY"></p><p align="JUSTIFY">30.
+	The third suggestion to hold the rates at current levels, and not to 
+allow it to appreciate any further, even if inflows are strong, is also 
+likely to be unsustainable over any length of time.  It virtually  
+amounts to adopting a "fixed" or a near-fixed exchange rate system with a
+ floor.  Past experience suggests that this system can work well, as it 
+did in East Asia prior to the crisis, when the economy is doing well and
+ inflows are strong,  but it comes under extreme pressure when there are
+ unfavourable domestic or external developments.  Abandonment of a 
+system of "fixed" exchange rates (or a system with a known floor) then 
+becomes unavoidable.  Such a change, when it occurs under pressure, can 
+result in considerable instability which is likely to be spread over a 
+fairly long period.  At the end of this process, the country then has no
+ option but to revert to a more flexible exchange rate system.  </p><p align="JUSTIFY"></p><p align="JUSTIFY">31.
+	It is by no means a mere coincidence that all countries affected by 
+external crises in the 1990s had a fixed or near-fixed exchange rate 
+systems.  China at present is an exception to the rule in view of its 
+persistent trade surpluses over a long period combined with very high 
+levels of foreign direct investment.  It is not certain how long into 
+the  future this situation will prevail.  In any case, China’s special 
+characteristics  are difficult to replicate in other emerging markets 
+with lower volume of trade and foreign investment.</p><p align="JUSTIFY"></p><p align="JUSTIFY">32.
+	The desirability of maintaining the-overall competitiveness of an 
+economy  can hardly be questioned.  However, the long-run 
+competitiveness of an economy needs to be measured in relation to a 
+multiple currency basket, and in relation to major trading partners over
+ a reasonably long period of time.  Exchange rate fluctuations among 
+major currencies are now an everyday fact of life, and it is important 
+for all entities with foreign exchange exposures to resort to "hedging" 
+with appropriate risk management of assets and liabilities. </p><p align="JUSTIFY"></p><p align="JUSTIFY">33.
+	On balance, the benefits of the suggested alternatives to the present 
+system are not very clear.  The present system is by no means an ideal 
+one.  However, like the old cliche about virtues of democracy, it is 
+probably better in the long run than all the available alternatives.  In
+ view of behavioural and market complexities in this area, as well as 
+multiple economic policy objectives, solutions which seem "ex ante" 
+optimal may turn out to be disastrous "ex post" -  after the event – as 
+happened in Argentina recently and East Asia and Mexico some years ago.</p><p align="JUSTIFY"></p><p align="JUSTIFY">34.
+	Nevertheless, as I said a while ago, RBI welcomes the present debate.  
+As a contribution to this debate, I have tried to deal with some 
+relevant issues, and indicate our present views on them.  These views 
+are, of course, subject to change in the light of domestic and 
+international experience and further academic insights.  </p><p align="JUSTIFY"></p><p align="JUSTIFY">35.	We look forward to your deliberations and hope to benefit from them.</p><font size="2"><p></p><hr size="1">Address by Dr. Bimal Jalan at 14<sup>th</sup> National Assembly of Forex Association of India 14.8.2003<p></p></font> </td></tr></tbody></table>
+                            
+                        </div>
+                        <br>
+                        <div align="right">
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="grid_1 archives alpha">
+                <span id="DateSettree_lbltree" style=""><div class="grid_subtree archives alpha" id="treeYearMonth_PR"><div class="accordionButton year" id="btn2019">2019</div><div class="accordionContent month" id="2019" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20190" onclick='GetYearMonth("2019","0")'>All Months</a></li><li><a href="#" id="20191" onclick='GetYearMonth("2019","1")'>January</a></li><li><a href="#" id="20192" onclick='GetYearMonth("2019","2")'>February</a></li><li><a href="#" id="20193" onclick='GetYearMonth("2019","3")'>March</a></li><li><a href="#" id="20194" onclick='GetYearMonth("2019","4")'>April</a></li><li><a href="#" id="20195" onclick='GetYearMonth("2019","5")'>May</a></li><li><a href="#" id="20196" onclick='GetYearMonth("2019","6")'>June</a></li><li><a href="#" id="20197" onclick='GetYearMonth("2019","7")'>July</a></li><li><a href="#" id="20198" onclick='GetYearMonth("2019","8")'>August</a></li><li><a href="#" id="20199" onclick='GetYearMonth("2019","9")'>September</a></li><li><a href="#" id="201910" onclick='GetYearMonth("2019","10")'>October</a></li><li><a href="#" id="201911" onclick='GetYearMonth("2019","11")'>November</a></li><li><a href="#" id="201912" onclick='GetYearMonth("2019","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2018">2018</div><div class="accordionContent month" id="2018" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20180" onclick='GetYearMonth("2018","0")'>All Months</a></li><li><a href="#" id="20181" onclick='GetYearMonth("2018","1")'>January</a></li><li><a href="#" id="20182" onclick='GetYearMonth("2018","2")'>February</a></li><li><a href="#" id="20183" onclick='GetYearMonth("2018","3")'>March</a></li><li><a href="#" id="20184" onclick='GetYearMonth("2018","4")'>April</a></li><li><a href="#" id="20185" onclick='GetYearMonth("2018","5")'>May</a></li><li><a href="#" id="20186" onclick='GetYearMonth("2018","6")'>June</a></li><li><a href="#" id="20187" onclick='GetYearMonth("2018","7")'>July</a></li><li><a href="#" id="20188" onclick='GetYearMonth("2018","8")'>August</a></li><li><a href="#" id="20189" onclick='GetYearMonth("2018","9")'>September</a></li><li><a href="#" id="201810" onclick='GetYearMonth("2018","10")'>October</a></li><li><a href="#" id="201811" onclick='GetYearMonth("2018","11")'>November</a></li><li><a href="#" id="201812" onclick='GetYearMonth("2018","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2017">2017</div><div class="accordionContent month" id="2017" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20170" onclick='GetYearMonth("2017","0")'>All Months</a></li><li><a href="#" id="20171" onclick='GetYearMonth("2017","1")'>January</a></li><li><a href="#" id="20172" onclick='GetYearMonth("2017","2")'>February</a></li><li><a href="#" id="20173" onclick='GetYearMonth("2017","3")'>March</a></li><li><a href="#" id="20174" onclick='GetYearMonth("2017","4")'>April</a></li><li><a href="#" id="20175" onclick='GetYearMonth("2017","5")'>May</a></li><li><a href="#" id="20176" onclick='GetYearMonth("2017","6")'>June</a></li><li><a href="#" id="20177" onclick='GetYearMonth("2017","7")'>July</a></li><li><a href="#" id="20178" onclick='GetYearMonth("2017","8")'>August</a></li><li><a href="#" id="20179" onclick='GetYearMonth("2017","9")'>September</a></li><li><a href="#" id="201710" onclick='GetYearMonth("2017","10")'>October</a></li><li><a href="#" id="201711" onclick='GetYearMonth("2017","11")'>November</a></li><li><a href="#" id="201712" onclick='GetYearMonth("2017","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2016">2016</div><div class="accordionContent month" id="2016" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20160" onclick='GetYearMonth("2016","0")'>All Months</a></li><li><a href="#" id="20161" onclick='GetYearMonth("2016","1")'>January</a></li><li><a href="#" id="20162" onclick='GetYearMonth("2016","2")'>February</a></li><li><a href="#" id="20163" onclick='GetYearMonth("2016","3")'>March</a></li><li><a href="#" id="20164" onclick='GetYearMonth("2016","4")'>April</a></li><li><a href="#" id="20165" onclick='GetYearMonth("2016","5")'>May</a></li><li><a href="#" id="20166" onclick='GetYearMonth("2016","6")'>June</a></li><li><a href="#" id="20167" onclick='GetYearMonth("2016","7")'>July</a></li><li><a href="#" id="20168" onclick='GetYearMonth("2016","8")'>August</a></li><li><a href="#" id="20169" onclick='GetYearMonth("2016","9")'>September</a></li><li><a href="#" id="201610" onclick='GetYearMonth("2016","10")'>October</a></li><li><a href="#" id="201611" onclick='GetYearMonth("2016","11")'>November</a></li><li><a href="#" id="201612" onclick='GetYearMonth("2016","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2015">2015</div><div class="accordionContent month" id="2015" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20150" onclick='GetYearMonth("2015","0")'>All Months</a></li><li><a href="#" id="20151" onclick='GetYearMonth("2015","1")'>January</a></li><li><a href="#" id="20152" onclick='GetYearMonth("2015","2")'>February</a></li><li><a href="#" id="20153" onclick='GetYearMonth("2015","3")'>March</a></li><li><a href="#" id="20154" onclick='GetYearMonth("2015","4")'>April</a></li><li><a href="#" id="20155" onclick='GetYearMonth("2015","5")'>May</a></li><li><a href="#" id="20156" onclick='GetYearMonth("2015","6")'>June</a></li><li><a href="#" id="20157" onclick='GetYearMonth("2015","7")'>July</a></li><li><a href="#" id="20158" onclick='GetYearMonth("2015","8")'>August</a></li><li><a href="#" id="20159" onclick='GetYearMonth("2015","9")'>September</a></li><li><a href="#" id="201510" onclick='GetYearMonth("2015","10")'>October</a></li><li><a href="#" id="201511" onclick='GetYearMonth("2015","11")'>November</a></li><li><a href="#" id="201512" onclick='GetYearMonth("2015","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2014">2014</div><div class="accordionContent month" id="2014" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20140" onclick='GetYearMonth("2014","0")'>All Months</a></li><li><a href="#" id="20141" onclick='GetYearMonth("2014","1")'>January</a></li><li><a href="#" id="20142" onclick='GetYearMonth("2014","2")'>February</a></li><li><a href="#" id="20143" onclick='GetYearMonth("2014","3")'>March</a></li><li><a href="#" id="20144" onclick='GetYearMonth("2014","4")'>April</a></li><li><a href="#" id="20145" onclick='GetYearMonth("2014","5")'>May</a></li><li><a href="#" id="20146" onclick='GetYearMonth("2014","6")'>June</a></li><li><a href="#" id="20147" onclick='GetYearMonth("2014","7")'>July</a></li><li><a href="#" id="20148" onclick='GetYearMonth("2014","8")'>August</a></li><li><a href="#" id="20149" onclick='GetYearMonth("2014","9")'>September</a></li><li><a href="#" id="201410" onclick='GetYearMonth("2014","10")'>October</a></li><li><a href="#" id="201411" onclick='GetYearMonth("2014","11")'>November</a></li><li><a href="#" id="201412" onclick='GetYearMonth("2014","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2013">2013</div><div class="accordionContent month" id="2013" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20130" onclick='GetYearMonth("2013","0")'>All Months</a></li><li><a href="#" id="20131" onclick='GetYearMonth("2013","1")'>January</a></li><li><a href="#" id="20132" onclick='GetYearMonth("2013","2")'>February</a></li><li><a href="#" id="20133" onclick='GetYearMonth("2013","3")'>March</a></li><li><a href="#" id="20134" onclick='GetYearMonth("2013","4")'>April</a></li><li><a href="#" id="20135" onclick='GetYearMonth("2013","5")'>May</a></li><li><a href="#" id="20136" onclick='GetYearMonth("2013","6")'>June</a></li><li><a href="#" id="20137" onclick='GetYearMonth("2013","7")'>July</a></li><li><a href="#" id="20138" onclick='GetYearMonth("2013","8")'>August</a></li><li><a href="#" id="20139" onclick='GetYearMonth("2013","9")'>September</a></li><li><a href="#" id="201310" onclick='GetYearMonth("2013","10")'>October</a></li><li><a href="#" id="201311" onclick='GetYearMonth("2013","11")'>November</a></li><li><a href="#" id="201312" onclick='GetYearMonth("2013","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2012">2012</div><div class="accordionContent month" id="2012" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20120" onclick='GetYearMonth("2012","0")'>All Months</a></li><li><a href="#" id="20121" onclick='GetYearMonth("2012","1")'>January</a></li><li><a href="#" id="20122" onclick='GetYearMonth("2012","2")'>February</a></li><li><a href="#" id="20123" onclick='GetYearMonth("2012","3")'>March</a></li><li><a href="#" id="20124" onclick='GetYearMonth("2012","4")'>April</a></li><li><a href="#" id="20125" onclick='GetYearMonth("2012","5")'>May</a></li><li><a href="#" id="20126" onclick='GetYearMonth("2012","6")'>June</a></li><li><a href="#" id="20127" onclick='GetYearMonth("2012","7")'>July</a></li><li><a href="#" id="20128" onclick='GetYearMonth("2012","8")'>August</a></li><li><a href="#" id="20129" onclick='GetYearMonth("2012","9")'>September</a></li><li><a href="#" id="201210" onclick='GetYearMonth("2012","10")'>October</a></li><li><a href="#" id="201211" onclick='GetYearMonth("2012","11")'>November</a></li><li><a href="#" id="201212" onclick='GetYearMonth("2012","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2011">2011</div><div class="accordionContent month" id="2011" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20110" onclick='GetYearMonth("2011","0")'>All Months</a></li><li><a href="#" id="20111" onclick='GetYearMonth("2011","1")'>January</a></li><li><a href="#" id="20112" onclick='GetYearMonth("2011","2")'>February</a></li><li><a href="#" id="20113" onclick='GetYearMonth("2011","3")'>March</a></li><li><a href="#" id="20114" onclick='GetYearMonth("2011","4")'>April</a></li><li><a href="#" id="20115" onclick='GetYearMonth("2011","5")'>May</a></li><li><a href="#" id="20116" onclick='GetYearMonth("2011","6")'>June</a></li><li><a href="#" id="20117" onclick='GetYearMonth("2011","7")'>July</a></li><li><a href="#" id="20118" onclick='GetYearMonth("2011","8")'>August</a></li><li><a href="#" id="20119" onclick='GetYearMonth("2011","9")'>September</a></li><li><a href="#" id="201110" onclick='GetYearMonth("2011","10")'>October</a></li><li><a href="#" id="201111" onclick='GetYearMonth("2011","11")'>November</a></li><li><a href="#" id="201112" onclick='GetYearMonth("2011","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2010">2010</div><div class="accordionContent month" id="2010" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20100" onclick='GetYearMonth("2010","0")'>All Months</a></li><li><a href="#" id="20101" onclick='GetYearMonth("2010","1")'>January</a></li><li><a href="#" id="20102" onclick='GetYearMonth("2010","2")'>February</a></li><li><a href="#" id="20103" onclick='GetYearMonth("2010","3")'>March</a></li><li><a href="#" id="20104" onclick='GetYearMonth("2010","4")'>April</a></li><li><a href="#" id="20105" onclick='GetYearMonth("2010","5")'>May</a></li><li><a href="#" id="20106" onclick='GetYearMonth("2010","6")'>June</a></li><li><a href="#" id="20107" onclick='GetYearMonth("2010","7")'>July</a></li><li><a href="#" id="20108" onclick='GetYearMonth("2010","8")'>August</a></li><li><a href="#" id="20109" onclick='GetYearMonth("2010","9")'>September</a></li><li><a href="#" id="201010" onclick='GetYearMonth("2010","10")'>October</a></li><li><a href="#" id="201011" onclick='GetYearMonth("2010","11")'>November</a></li><li><a href="#" id="201012" onclick='GetYearMonth("2010","12")'>December</a></li></ul></div><div id="divArchiveMain" class="year" onclick="hideshow('divArchiveSub');" style="cursor: pointer;">Archives</div><div id="divArchiveSub" style="display: none;"><div class="grid_subtree archives alpha" id="treeYearMonth_PR"><div class="accordionButton year" id="btn2009">2009</div><div class="accordionContent month" id="2009" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20090" onclick='GetYearMonth("2009","0")'>All Months</a></li><li><a href="#" id="20091" onclick='GetYearMonth("2009","1")'>January</a></li><li><a href="#" id="20092" onclick='GetYearMonth("2009","2")'>February</a></li><li><a href="#" id="20093" onclick='GetYearMonth("2009","3")'>March</a></li><li><a href="#" id="20094" onclick='GetYearMonth("2009","4")'>April</a></li><li><a href="#" id="20095" onclick='GetYearMonth("2009","5")'>May</a></li><li><a href="#" id="20096" onclick='GetYearMonth("2009","6")'>June</a></li><li><a href="#" id="20097" onclick='GetYearMonth("2009","7")'>July</a></li><li><a href="#" id="20098" onclick='GetYearMonth("2009","8")'>August</a></li><li><a href="#" id="20099" onclick='GetYearMonth("2009","9")'>September</a></li><li><a href="#" id="200910" onclick='GetYearMonth("2009","10")'>October</a></li><li><a href="#" id="200911" onclick='GetYearMonth("2009","11")'>November</a></li><li><a href="#" id="200912" onclick='GetYearMonth("2009","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2008">2008</div><div class="accordionContent month" id="2008" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20080" onclick='GetYearMonth("2008","0")'>All Months</a></li><li><a href="#" id="20081" onclick='GetYearMonth("2008","1")'>January</a></li><li><a href="#" id="20082" onclick='GetYearMonth("2008","2")'>February</a></li><li><a href="#" id="20083" onclick='GetYearMonth("2008","3")'>March</a></li><li><a href="#" id="20084" onclick='GetYearMonth("2008","4")'>April</a></li><li><a href="#" id="20085" onclick='GetYearMonth("2008","5")'>May</a></li><li><a href="#" id="20086" onclick='GetYearMonth("2008","6")'>June</a></li><li><a href="#" id="20087" onclick='GetYearMonth("2008","7")'>July</a></li><li><a href="#" id="20088" onclick='GetYearMonth("2008","8")'>August</a></li><li><a href="#" id="20089" onclick='GetYearMonth("2008","9")'>September</a></li><li><a href="#" id="200810" onclick='GetYearMonth("2008","10")'>October</a></li><li><a href="#" id="200811" onclick='GetYearMonth("2008","11")'>November</a></li><li><a href="#" id="200812" onclick='GetYearMonth("2008","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2007">2007</div><div class="accordionContent month" id="2007" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20070" onclick='GetYearMonth("2007","0")'>All Months</a></li><li><a href="#" id="20071" onclick='GetYearMonth("2007","1")'>January</a></li><li><a href="#" id="20072" onclick='GetYearMonth("2007","2")'>February</a></li><li><a href="#" id="20073" onclick='GetYearMonth("2007","3")'>March</a></li><li><a href="#" id="20074" onclick='GetYearMonth("2007","4")'>April</a></li><li><a href="#" id="20075" onclick='GetYearMonth("2007","5")'>May</a></li><li><a href="#" id="20076" onclick='GetYearMonth("2007","6")'>June</a></li><li><a href="#" id="20077" onclick='GetYearMonth("2007","7")'>July</a></li><li><a href="#" id="20078" onclick='GetYearMonth("2007","8")'>August</a></li><li><a href="#" id="20079" onclick='GetYearMonth("2007","9")'>September</a></li><li><a href="#" id="200710" onclick='GetYearMonth("2007","10")'>October</a></li><li><a href="#" id="200711" onclick='GetYearMonth("2007","11")'>November</a></li><li><a href="#" id="200712" onclick='GetYearMonth("2007","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2006">2006</div><div class="accordionContent month" id="2006" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20060" onclick='GetYearMonth("2006","0")'>All Months</a></li><li><a href="#" id="20061" onclick='GetYearMonth("2006","1")'>January</a></li><li><a href="#" id="20062" onclick='GetYearMonth("2006","2")'>February</a></li><li><a href="#" id="20063" onclick='GetYearMonth("2006","3")'>March</a></li><li><a href="#" id="20064" onclick='GetYearMonth("2006","4")'>April</a></li><li><a href="#" id="20065" onclick='GetYearMonth("2006","5")'>May</a></li><li><a href="#" id="20066" onclick='GetYearMonth("2006","6")'>June</a></li><li><a href="#" id="20067" onclick='GetYearMonth("2006","7")'>July</a></li><li><a href="#" id="20068" onclick='GetYearMonth("2006","8")'>August</a></li><li><a href="#" id="20069" onclick='GetYearMonth("2006","9")'>September</a></li><li><a href="#" id="200610" onclick='GetYearMonth("2006","10")'>October</a></li><li><a href="#" id="200611" onclick='GetYearMonth("2006","11")'>November</a></li><li><a href="#" id="200612" onclick='GetYearMonth("2006","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2005">2005</div><div class="accordionContent month" id="2005" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20050" onclick='GetYearMonth("2005","0")'>All Months</a></li><li><a href="#" id="20051" onclick='GetYearMonth("2005","1")'>January</a></li><li><a href="#" id="20052" onclick='GetYearMonth("2005","2")'>February</a></li><li><a href="#" id="20053" onclick='GetYearMonth("2005","3")'>March</a></li><li><a href="#" id="20054" onclick='GetYearMonth("2005","4")'>April</a></li><li><a href="#" id="20055" onclick='GetYearMonth("2005","5")'>May</a></li><li><a href="#" id="20056" onclick='GetYearMonth("2005","6")'>June</a></li><li><a href="#" id="20057" onclick='GetYearMonth("2005","7")'>July</a></li><li><a href="#" id="20058" onclick='GetYearMonth("2005","8")'>August</a></li><li><a href="#" id="20059" onclick='GetYearMonth("2005","9")'>September</a></li><li><a href="#" id="200510" onclick='GetYearMonth("2005","10")'>October</a></li><li><a href="#" id="200511" onclick='GetYearMonth("2005","11")'>November</a></li><li><a href="#" id="200512" onclick='GetYearMonth("2005","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2004">2004</div><div class="accordionContent month" id="2004" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20040" onclick='GetYearMonth("2004","0")'>All Months</a></li><li><a href="#" id="20041" onclick='GetYearMonth("2004","1")'>January</a></li><li><a href="#" id="20042" onclick='GetYearMonth("2004","2")'>February</a></li><li><a href="#" id="20043" onclick='GetYearMonth("2004","3")'>March</a></li><li><a href="#" id="20044" onclick='GetYearMonth("2004","4")'>April</a></li><li><a href="#" id="20045" onclick='GetYearMonth("2004","5")'>May</a></li><li><a href="#" id="20046" onclick='GetYearMonth("2004","6")'>June</a></li><li><a href="#" id="20047" onclick='GetYearMonth("2004","7")'>July</a></li><li><a href="#" id="20048" onclick='GetYearMonth("2004","8")'>August</a></li><li><a href="#" id="20049" onclick='GetYearMonth("2004","9")'>September</a></li><li><a href="#" id="200410" onclick='GetYearMonth("2004","10")'>October</a></li><li><a href="#" id="200411" onclick='GetYearMonth("2004","11")'>November</a></li><li><a href="#" id="200412" onclick='GetYearMonth("2004","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2003">2003</div><div class="accordionContent month" id="2003" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20030" onclick='GetYearMonth("2003","0")'>All Months</a></li><li><a href="#" id="20031" onclick='GetYearMonth("2003","1")'>January</a></li><li><a href="#" id="20032" onclick='GetYearMonth("2003","2")'>February</a></li><li><a href="#" id="20033" onclick='GetYearMonth("2003","3")'>March</a></li><li><a href="#" id="20034" onclick='GetYearMonth("2003","4")'>April</a></li><li><a href="#" id="20035" onclick='GetYearMonth("2003","5")'>May</a></li><li><a href="#" id="20036" onclick='GetYearMonth("2003","6")'>June</a></li><li><a href="#" id="20037" onclick='GetYearMonth("2003","7")'>July</a></li><li><a href="#" id="20038" onclick='GetYearMonth("2003","8")'>August</a></li><li><a href="#" id="20039" onclick='GetYearMonth("2003","9")'>September</a></li><li><a href="#" id="200310" onclick='GetYearMonth("2003","10")'>October</a></li><li><a href="#" id="200311" onclick='GetYearMonth("2003","11")'>November</a></li><li><a href="#" id="200312" onclick='GetYearMonth("2003","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2002">2002</div><div class="accordionContent month" id="2002" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20020" onclick='GetYearMonth("2002","0")'>All Months</a></li><li><a href="#" id="20021" onclick='GetYearMonth("2002","1")'>January</a></li><li><a href="#" id="20022" onclick='GetYearMonth("2002","2")'>February</a></li><li><a href="#" id="20023" onclick='GetYearMonth("2002","3")'>March</a></li><li><a href="#" id="20024" onclick='GetYearMonth("2002","4")'>April</a></li><li><a href="#" id="20025" onclick='GetYearMonth("2002","5")'>May</a></li><li><a href="#" id="20026" onclick='GetYearMonth("2002","6")'>June</a></li><li><a href="#" id="20027" onclick='GetYearMonth("2002","7")'>July</a></li><li><a href="#" id="20028" onclick='GetYearMonth("2002","8")'>August</a></li><li><a href="#" id="20029" onclick='GetYearMonth("2002","9")'>September</a></li><li><a href="#" id="200210" onclick='GetYearMonth("2002","10")'>October</a></li><li><a href="#" id="200211" onclick='GetYearMonth("2002","11")'>November</a></li><li><a href="#" id="200212" onclick='GetYearMonth("2002","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2001">2001</div><div class="accordionContent month" id="2001" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20010" onclick='GetYearMonth("2001","0")'>All Months</a></li><li><a href="#" id="20011" onclick='GetYearMonth("2001","1")'>January</a></li><li><a href="#" id="20012" onclick='GetYearMonth("2001","2")'>February</a></li><li><a href="#" id="20013" onclick='GetYearMonth("2001","3")'>March</a></li><li><a href="#" id="20014" onclick='GetYearMonth("2001","4")'>April</a></li><li><a href="#" id="20015" onclick='GetYearMonth("2001","5")'>May</a></li><li><a href="#" id="20016" onclick='GetYearMonth("2001","6")'>June</a></li><li><a href="#" id="20017" onclick='GetYearMonth("2001","7")'>July</a></li><li><a href="#" id="20018" onclick='GetYearMonth("2001","8")'>August</a></li><li><a href="#" id="20019" onclick='GetYearMonth("2001","9")'>September</a></li><li><a href="#" id="200110" onclick='GetYearMonth("2001","10")'>October</a></li><li><a href="#" id="200111" onclick='GetYearMonth("2001","11")'>November</a></li><li><a href="#" id="200112" onclick='GetYearMonth("2001","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2000">2000</div><div class="accordionContent month" id="2000" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20000" onclick='GetYearMonth("2000","0")'>All Months</a></li><li><a href="#" id="20001" onclick='GetYearMonth("2000","1")'>January</a></li><li><a href="#" id="20002" onclick='GetYearMonth("2000","2")'>February</a></li><li><a href="#" id="20003" onclick='GetYearMonth("2000","3")'>March</a></li><li><a href="#" id="20004" onclick='GetYearMonth("2000","4")'>April</a></li><li><a href="#" id="20005" onclick='GetYearMonth("2000","5")'>May</a></li><li><a href="#" id="20006" onclick='GetYearMonth("2000","6")'>June</a></li><li><a href="#" id="20007" onclick='GetYearMonth("2000","7")'>July</a></li><li><a href="#" id="20008" onclick='GetYearMonth("2000","8")'>August</a></li><li><a href="#" id="20009" onclick='GetYearMonth("2000","9")'>September</a></li><li><a href="#" id="200010" onclick='GetYearMonth("2000","10")'>October</a></li><li><a href="#" id="200011" onclick='GetYearMonth("2000","11")'>November</a></li><li><a href="#" id="200012" onclick='GetYearMonth("2000","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1999">1999</div><div class="accordionContent month" id="1999" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19990" onclick='GetYearMonth("1999","0")'>All Months</a></li><li><a href="#" id="19991" onclick='GetYearMonth("1999","1")'>January</a></li><li><a href="#" id="19992" onclick='GetYearMonth("1999","2")'>February</a></li><li><a href="#" id="19993" onclick='GetYearMonth("1999","3")'>March</a></li><li><a href="#" id="19994" onclick='GetYearMonth("1999","4")'>April</a></li><li><a href="#" id="19995" onclick='GetYearMonth("1999","5")'>May</a></li><li><a href="#" id="19996" onclick='GetYearMonth("1999","6")'>June</a></li><li><a href="#" id="19997" onclick='GetYearMonth("1999","7")'>July</a></li><li><a href="#" id="19998" onclick='GetYearMonth("1999","8")'>August</a></li><li><a href="#" id="19999" onclick='GetYearMonth("1999","9")'>September</a></li><li><a href="#" id="199910" onclick='GetYearMonth("1999","10")'>October</a></li><li><a href="#" id="199911" onclick='GetYearMonth("1999","11")'>November</a></li><li><a href="#" id="199912" onclick='GetYearMonth("1999","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1998">1998</div><div class="accordionContent month" id="1998" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19980" onclick='GetYearMonth("1998","0")'>All Months</a></li><li><a href="#" id="19981" onclick='GetYearMonth("1998","1")'>January</a></li><li><a href="#" id="19982" onclick='GetYearMonth("1998","2")'>February</a></li><li><a href="#" id="19983" onclick='GetYearMonth("1998","3")'>March</a></li><li><a href="#" id="19984" onclick='GetYearMonth("1998","4")'>April</a></li><li><a href="#" id="19985" onclick='GetYearMonth("1998","5")'>May</a></li><li><a href="#" id="19986" onclick='GetYearMonth("1998","6")'>June</a></li><li><a href="#" id="19987" onclick='GetYearMonth("1998","7")'>July</a></li><li><a href="#" id="19988" onclick='GetYearMonth("1998","8")'>August</a></li><li><a href="#" id="19989" onclick='GetYearMonth("1998","9")'>September</a></li><li><a href="#" id="199810" onclick='GetYearMonth("1998","10")'>October</a></li><li><a href="#" id="199811" onclick='GetYearMonth("1998","11")'>November</a></li><li><a href="#" id="199812" onclick='GetYearMonth("1998","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1997">1997</div><div class="accordionContent month" id="1997" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19970" onclick='GetYearMonth("1997","0")'>All Months</a></li><li><a href="#" id="19971" onclick='GetYearMonth("1997","1")'>January</a></li><li><a href="#" id="19972" onclick='GetYearMonth("1997","2")'>February</a></li><li><a href="#" id="19973" onclick='GetYearMonth("1997","3")'>March</a></li><li><a href="#" id="19974" onclick='GetYearMonth("1997","4")'>April</a></li><li><a href="#" id="19975" onclick='GetYearMonth("1997","5")'>May</a></li><li><a href="#" id="19976" onclick='GetYearMonth("1997","6")'>June</a></li><li><a href="#" id="19977" onclick='GetYearMonth("1997","7")'>July</a></li><li><a href="#" id="19978" onclick='GetYearMonth("1997","8")'>August</a></li><li><a href="#" id="19979" onclick='GetYearMonth("1997","9")'>September</a></li><li><a href="#" id="199710" onclick='GetYearMonth("1997","10")'>October</a></li><li><a href="#" id="199711" onclick='GetYearMonth("1997","11")'>November</a></li><li><a href="#" id="199712" onclick='GetYearMonth("1997","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1996">1996</div><div class="accordionContent month" id="1996" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19960" onclick='GetYearMonth("1996","0")'>All Months</a></li><li><a href="#" id="19961" onclick='GetYearMonth("1996","1")'>January</a></li><li><a href="#" id="19962" onclick='GetYearMonth("1996","2")'>February</a></li><li><a href="#" id="19963" onclick='GetYearMonth("1996","3")'>March</a></li><li><a href="#" id="19964" onclick='GetYearMonth("1996","4")'>April</a></li><li><a href="#" id="19965" onclick='GetYearMonth("1996","5")'>May</a></li><li><a href="#" id="19966" onclick='GetYearMonth("1996","6")'>June</a></li><li><a href="#" id="19967" onclick='GetYearMonth("1996","7")'>July</a></li><li><a href="#" id="19968" onclick='GetYearMonth("1996","8")'>August</a></li><li><a href="#" id="19969" onclick='GetYearMonth("1996","9")'>September</a></li><li><a href="#" id="199610" onclick='GetYearMonth("1996","10")'>October</a></li><li><a href="#" id="199611" onclick='GetYearMonth("1996","11")'>November</a></li><li><a href="#" id="199612" onclick='GetYearMonth("1996","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1995">1995</div><div class="accordionContent month" id="1995" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19950" onclick='GetYearMonth("1995","0")'>All Months</a></li><li><a href="#" id="19951" onclick='GetYearMonth("1995","1")'>January</a></li><li><a href="#" id="19952" onclick='GetYearMonth("1995","2")'>February</a></li><li><a href="#" id="19953" onclick='GetYearMonth("1995","3")'>March</a></li><li><a href="#" id="19954" onclick='GetYearMonth("1995","4")'>April</a></li><li><a href="#" id="19955" onclick='GetYearMonth("1995","5")'>May</a></li><li><a href="#" id="19956" onclick='GetYearMonth("1995","6")'>June</a></li><li><a href="#" id="19957" onclick='GetYearMonth("1995","7")'>July</a></li><li><a href="#" id="19958" onclick='GetYearMonth("1995","8")'>August</a></li><li><a href="#" id="19959" onclick='GetYearMonth("1995","9")'>September</a></li><li><a href="#" id="199510" onclick='GetYearMonth("1995","10")'>October</a></li><li><a href="#" id="199511" onclick='GetYearMonth("1995","11")'>November</a></li><li><a href="#" id="199512" onclick='GetYearMonth("1995","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1994">1994</div><div class="accordionContent month" id="1994" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19940" onclick='GetYearMonth("1994","0")'>All Months</a></li><li><a href="#" id="19941" onclick='GetYearMonth("1994","1")'>January</a></li><li><a href="#" id="19942" onclick='GetYearMonth("1994","2")'>February</a></li><li><a href="#" id="19943" onclick='GetYearMonth("1994","3")'>March</a></li><li><a href="#" id="19944" onclick='GetYearMonth("1994","4")'>April</a></li><li><a href="#" id="19945" onclick='GetYearMonth("1994","5")'>May</a></li><li><a href="#" id="19946" onclick='GetYearMonth("1994","6")'>June</a></li><li><a href="#" id="19947" onclick='GetYearMonth("1994","7")'>July</a></li><li><a href="#" id="19948" onclick='GetYearMonth("1994","8")'>August</a></li><li><a href="#" id="19949" onclick='GetYearMonth("1994","9")'>September</a></li><li><a href="#" id="199410" onclick='GetYearMonth("1994","10")'>October</a></li><li><a href="#" id="199411" onclick='GetYearMonth("1994","11")'>November</a></li><li><a href="#" id="199412" onclick='GetYearMonth("1994","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1993">1993</div><div class="accordionContent month" id="1993" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19930" onclick='GetYearMonth("1993","0")'>All Months</a></li><li><a href="#" id="19931" onclick='GetYearMonth("1993","1")'>January</a></li><li><a href="#" id="19932" onclick='GetYearMonth("1993","2")'>February</a></li><li><a href="#" id="19933" onclick='GetYearMonth("1993","3")'>March</a></li><li><a href="#" id="19934" onclick='GetYearMonth("1993","4")'>April</a></li><li><a href="#" id="19935" onclick='GetYearMonth("1993","5")'>May</a></li><li><a href="#" id="19936" onclick='GetYearMonth("1993","6")'>June</a></li><li><a href="#" id="19937" onclick='GetYearMonth("1993","7")'>July</a></li><li><a href="#" id="19938" onclick='GetYearMonth("1993","8")'>August</a></li><li><a href="#" id="19939" onclick='GetYearMonth("1993","9")'>September</a></li><li><a href="#" id="199310" onclick='GetYearMonth("1993","10")'>October</a></li><li><a href="#" id="199311" onclick='GetYearMonth("1993","11")'>November</a></li><li><a href="#" id="199312" onclick='GetYearMonth("1993","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1992">1992</div><div class="accordionContent month" id="1992" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19920" onclick='GetYearMonth("1992","0")'>All Months</a></li><li><a href="#" id="19921" onclick='GetYearMonth("1992","1")'>January</a></li><li><a href="#" id="19922" onclick='GetYearMonth("1992","2")'>February</a></li><li><a href="#" id="19923" onclick='GetYearMonth("1992","3")'>March</a></li><li><a href="#" id="19924" onclick='GetYearMonth("1992","4")'>April</a></li><li><a href="#" id="19925" onclick='GetYearMonth("1992","5")'>May</a></li><li><a href="#" id="19926" onclick='GetYearMonth("1992","6")'>June</a></li><li><a href="#" id="19927" onclick='GetYearMonth("1992","7")'>July</a></li><li><a href="#" id="19928" onclick='GetYearMonth("1992","8")'>August</a></li><li><a href="#" id="19929" onclick='GetYearMonth("1992","9")'>September</a></li><li><a href="#" id="199210" onclick='GetYearMonth("1992","10")'>October</a></li><li><a href="#" id="199211" onclick='GetYearMonth("1992","11")'>November</a></li><li><a href="#" id="199212" onclick='GetYearMonth("1992","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1991">1991</div><div class="accordionContent month" id="1991" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19910" onclick='GetYearMonth("1991","0")'>All Months</a></li><li><a href="#" id="19911" onclick='GetYearMonth("1991","1")'>January</a></li><li><a href="#" id="19912" onclick='GetYearMonth("1991","2")'>February</a></li><li><a href="#" id="19913" onclick='GetYearMonth("1991","3")'>March</a></li><li><a href="#" id="19914" onclick='GetYearMonth("1991","4")'>April</a></li><li><a href="#" id="19915" onclick='GetYearMonth("1991","5")'>May</a></li><li><a href="#" id="19916" onclick='GetYearMonth("1991","6")'>June</a></li><li><a href="#" id="19917" onclick='GetYearMonth("1991","7")'>July</a></li><li><a href="#" id="19918" onclick='GetYearMonth("1991","8")'>August</a></li><li><a href="#" id="19919" onclick='GetYearMonth("1991","9")'>September</a></li><li><a href="#" id="199110" onclick='GetYearMonth("1991","10")'>October</a></li><li><a href="#" id="199111" onclick='GetYearMonth("1991","11")'>November</a></li><li><a href="#" id="199112" onclick='GetYearMonth("1991","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1990">1990</div><div class="accordionContent month" id="1990" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19900" onclick='GetYearMonth("1990","0")'>All Months</a></li><li><a href="#" id="19901" onclick='GetYearMonth("1990","1")'>January</a></li><li><a href="#" id="19902" onclick='GetYearMonth("1990","2")'>February</a></li><li><a href="#" id="19903" onclick='GetYearMonth("1990","3")'>March</a></li><li><a href="#" id="19904" onclick='GetYearMonth("1990","4")'>April</a></li><li><a href="#" id="19905" onclick='GetYearMonth("1990","5")'>May</a></li><li><a href="#" id="19906" onclick='GetYearMonth("1990","6")'>June</a></li><li><a href="#" id="19907" onclick='GetYearMonth("1990","7")'>July</a></li><li><a href="#" id="19908" onclick='GetYearMonth("1990","8")'>August</a></li><li><a href="#" id="19909" onclick='GetYearMonth("1990","9")'>September</a></li><li><a href="#" id="199010" onclick='GetYearMonth("1990","10")'>October</a></li><li><a href="#" id="199011" onclick='GetYearMonth("1990","11")'>November</a></li><li><a href="#" id="199012" onclick='GetYearMonth("1990","12")'>December</a></li></ul></div></div></div>
+
+
+
+
+            </div>
+        </span></div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <div style="display:none;">Server 214</div>
+<a href="#top" class="scrollToTop" id="backToTop" style="display: none;">Top</a>
+<footer class="footer">
+<div class="footer">
+  <div class="container_12">
+    <div class="grid_9" style="width:895px !important">
+      <h4><span class="blue">More</span> Links </h4>
+      <div class="grid_2 alpha" style="width:150px !important">
+        <ul class="footerlist">
+          <!--<li><a target="_blank" href="/Scripts/ExternalResearchSchemes.aspx">Research Portal</a></li>-->
+          <li><a target="_blank" href="https://rbi.org.in/FinancialEducation/Home.aspx">Financial Education</a></li>
+	  <li><a target="_blank" href="https://www.rbi.org.in/commonman/English/Scripts/rbikehtahai.aspx">RBI Kehta Hai</a></li>
+          <!--<li class="pbh"><a target="_blank" href="http://www.paisaboltahai.rbi.org.in/">Paisa Bolta Hai</a></li>
+          <li class="rbc"><a target="_blank" href="https://www.rbi.org.in/commonman/English/scripts/rbicautions.aspx">RBI Cautions</a></li>-->
+          <li><a href="https://rbi.org.in/Scripts/FAQDisplay.aspx">FAQs</a></li>
+          <!--<li><a href="/Scripts/Glossary.aspx">Glossary</a></li>-->
+          <li><a href="https://rbi.org.in/Scripts/IFSCMICRDetails.aspx">IFSC/MICR Codes</a></li>
+        </ul>
+      </div>
+      <div class="grid_2 omega" style="width:215px !important;">
+        <ul class="footerlist">
+          <li><a href="https://rbi.org.in/Scripts/BS_ViewTenders.aspx">Tenders</a></li>
+          <li><a target="_blank" href="https://opportunities.rbi.org.in/scripts/index.aspx">Opportunities<font>@</font>RBI</a></li>
+          <!--<li><a target="_blank" href="http://rbirevamp.opportunities.rbi.org.in/Scripts/index.aspx">Career@RBI</a></li>-->
+          <li><a href="https://rbi.org.in/Scripts/HolidayMatrixDisplay.aspx">Bank Holidays</a></li>
+          <li><a href="https://rbi.org.in/Scripts/BS_ViewForms.aspx">Forms</a></li>
+          <li><a target="_blank" href="https://secweb.rbi.org.in/ats/login/Login.do?LANG+english">Application Tracking System</a></li>
+        </ul>
+      </div>
+      <div class="grid_2 alpha omega" style="width:254px !important;">
+        <ul class="footerlist">
+          <li><a href="https://rbi.org.in/Scripts/EventsDisplay.aspx">Events</a></li>
+          <!--<li><a href="/Scripts/PublicEngagement.aspx">Public Speaking Engagements</a></li>-->
+          <li><a href="https://rbi.org.in/Scripts/rbi_clarification.aspx">RBI Clarifications</a></li>
+	  <li><a href="https://rbi.org.in/Scripts/Righttoinfoact.aspx">Right to Information Act</a></li>
+          <li><a href="https://rbi.org.in/Scripts/OtherLinks.aspx">Related Links</a></li>
+	  <li><a href="https://rbi.org.in/scripts/BS_RBIsCorePurpose.aspx">RBI's Core Purpose, Values and Vision</a></li>
+        </ul>
+      </div>
+      <div class="grid_2" style="width:215px !important;">
+        <ul class="footerlist">
+          
+          <li><a href="https://rbi.org.in/Scripts/CitiChart.aspx">Citizens' Charter</a></li>
+          <li><a href="https://rbi.org.in/Scripts/Timlines.aspx">Timelines for Regulatory Approvals</a></li>
+          <li><a href="https://rbi.org.in/Scripts/Complaints.aspx">Complaints</a></li>
+          <li><a href="https://rbi.org.in/Scripts/helpdesk.aspx">Contact Us</a></li>
+	  <li><a href="https://shabdavali.rbi.org.in/">Banking Glossary</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid_3" style="width:135px !important">
+      <h4><span class="blue">Follow</span> RBI </h4>
+      <ul class="footerlist">
+        <li><a href="https://rbi.org.in/Scripts/rss.aspx"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/rss-icon.png" alt="Subscribe to RSS" class="rss">RSS</a></li>
+        <li><a href="https://twitter.com/RBI" target="_blank" class="twitter"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/Twitter_Logo_Blue.png" alt="Follow RBI on Twitter" class="twitter" width="22px" height="22px">Twitter</a></li>
+        <li><a href="https://www.youtube.com/channel/UCIfCOl43tunZVNYafeC4RQA" class="videos" target="_blank"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/videos-icon.png" alt="Check RBI Videos" class="videos">Videos</a></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="copyright">
+    <div class="container_12">
+      <div class="grid_6 pull_left">© Reserve Bank of India. All Rights Reserved.</div>
+      <div class="grid_5 pull_right"><a href="https://rbi.org.in/Scripts/sitemap.aspx">Sitemap</a> | <a href="https://rbi.org.in/Scripts/Disclaimer.aspx">Disclaimer</a></div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+
+<!--Welcome note-->
+
+  <div id="boxesWN">
+  <div id="dialogWN" class="window" style="top:100px;">
+  <div> <img src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/Rbinote.jpg" alt="Rbi note" width="60" height="60"> </div>
+   <table class="WelcomeNote">
+   <tbody><tr>
+   <td style="float:right;">
+
+   April 14, 2015
+   </td>
+   </tr>
+    <tr>
+  
+    <td>
+    
+   Dear All
+    </td>
+    </tr>
+     <tr>
+     <td>
+     
+  Welcome to the refurbished site of the Reserve Bank of India. 
+    </td>
+   
+    </tr>
+    <tr>
+    <td>
+    
+  The two most important features of the site are: One, in addition to 
+the default site, the refurbished site also has all the information 
+bifurcated functionwise; two, a much improved search – well, at least we
+ think so but you be the judge. 
+    </td>
+   
+    </tr>
+
+      <tr>
+    <td>
+   With this makeover, we also take a small step into social media. We 
+will now use Twitter (albeit one way) to send out alerts on the 
+announcements we make and YouTube to place in public domain our press 
+conferences, interviews of our top management, events, such as, town 
+halls and of course, some films aimed at consumer literacy.  
+    </td>
+   
+    </tr>
+    <tr>
+    <td>
+    The site can be accessed through most browsers and devices; it also meets accessibility standards. 
+    </td>
+    </tr>
+    <tr>
+    <td>
+    Please save the url of the refurbished site in your favourites as we
+ will give up the existing site shortly and register or re-register 
+yourselves for receiving RSS feeds for uninterrupted alerts from the 
+Reserve Bank. 
+    </td>
+    </tr>
+    <tr>
+    <td>
+    Do feel free to give us your feedback by clicking on the feedback button on the right hand corner of the refurbished site. 
+    </td>
+    </tr>
+    <tr>
+    <td>
+    Thank you for your continued support.<br><br>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <strong>
+    Department of Communication <br>
+Reserve Bank of India</strong>
+
+    </td>
+    </tr>
+	<tr><td id="popupfootWN"><a href="#" class="close agree" style="float:right">Next</a></td></tr>
+    </tbody></table>
+   <!-- <div id="popupfootWN"> <a href="#" class="close agree" style="float:right" >Next</a>    </div>--><!--<img src="../images/button_close.gif" alt="Close" class="close agree" />-->
+  </div>
+  <div id="maskWN" style="width:100% !important"></div>
+
+<!--<div id="feedbackbtn"><a href="#"><div align="center" class="feedbacktext">Feedback</div></a></div>-->
+
+</div>
+</div>
+</footer>
+<!--<script type="text/javascript" src="/js/URLchange.js"></script>-->
+<!-- For live comment out below line.-->
+
+<script src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/ReplaceURL.js" type="text/javascript"></script>
+<script src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/jquery_002.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript">
+
+
+    //this is for floating TOP link
+    
+    $(document).ready(function () {
+
+        var offset = 230;
+        var duration = 500;
+
+
+        jQuery(window).scroll(function () {
+            if (jQuery(this).scrollTop() > offset) {
+                jQuery('.scrollToTop').fadeIn(duration);
+                // $('#backToTop').css('right', (diffWidth / 2) - 6);
+            } else {
+                jQuery('.scrollToTop').fadeOut(duration);
+                //  $('#backToTop').css('right', (diffWidth / 2) - 6);
+            }
+        });
+
+        //        $('a[href*=#]:not([href=#])').click(function () {
+
+        //            if (location.pathname.replace(/^\//, '') == window.location.pathname.replace(/^\//, '') && location.hostname == window.location.hostname) {
+
+        //                var target = $(this.hash);
+        //                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        //                if (target.length) {
+        //                    $('html,body').animate({
+        //                        scrollTop: target.offset().top
+        //                    }, 800);
+        //                    return false;
+        //                }
+        //            }
+        //        });
+
+        $('.scrollToTop').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 800);
+            return false;
+        });
+    });
+
+
+    //Below code is for floating left panel and floating tree structure
+    //first if condition is for functionwise pages and 2nd one for rest all
+    $(window).scroll(function () {
+
+        if ($('div.banner2').length) {
+
+            if ($(window).scrollTop() >= 265) {
+                $('#menubar').css("position", "fixed");
+                $('#menubar').css("width", "240px");
+                $('#menubar').css("margin-top", "-281px");
+                $('.content_area').css("margin-left", "252px");
+
+                $('.sidebar_nav').css("position", "fixed");
+                $('.sidebar_nav').css("margin-top", "-200px");
+                $('.sidebar_nav').css("width", "236px");
+
+
+                $('#DateSettree_lbltree').css('position', 'fixed');
+                $('#DateSettree_lbltree').css('margin-top', '-281px');
+
+            }
+
+            else {
+                $('#menubar').css("position", "");
+                $('#menubar').css("width", "");
+                $('#menubar').css("margin-top", "");
+                $('.content_area').css("margin-left", "");
+
+                $('.sidebar_nav').css("position", "");
+                $('.sidebar_nav').css("margin-top", "");
+                $('.sidebar_nav').css("width", "");
+
+
+
+                $('#DateSettree_lbltree').css('position', '');
+                $('#DateSettree_lbltree').css('margin-top', '');
+            }
+
+        }
+
+        else if ($(window).scrollTop() >= 185) {
+            $('#menubar').css("position", "fixed");
+            $('#menubar').css("width", "240px");
+            $('#menubar').css("margin-top", "-200px");
+            $('.content_area').css("margin-left", "252px");
+
+            $('.sidebar_nav').css("position", "fixed");
+            $('.sidebar_nav').css("margin-top", "-200px");
+            $('.sidebar_nav').css("width", "236px");
+
+
+            $('#DateSettree_lbltree').css('position', 'fixed');
+            $('#DateSettree_lbltree').css('margin-top', '-200px');
+
+        }
+
+        else {
+            $('#menubar').css("position", "");
+            $('#menubar').css("width", "");
+            $('#menubar').css("margin-top", "");
+            $('.content_area').css("margin-left", "");
+
+            $('.sidebar_nav').css("position", "");
+            $('.sidebar_nav').css("margin-top", "");
+            $('.sidebar_nav').css("width", "");
+
+
+            $('#DateSettree_lbltree').css('position', '');
+            $('#DateSettree_lbltree').css('margin-top', '');
+        }
+//        if ($(window).scrollTop() >= 235) {
+
+//            $('#DateSettree_lbltree').css('height', '183px');
+//            $('#DateSettree_lbltree').css('overflow-y', 'scroll');
+//            $('#DateSettree_lbltree').css('width', '100px');
+
+//        }
+//        else {
+//            $('#DateSettree_lbltree').css('height', '');
+//            $('#DateSettree_lbltree').css('overflow-y', '');
+//            $('#DateSettree_lbltree').css('width', '');
+
+//        }
+
+       
+    });
+	
+       // $(window).unload(function () {
+       //     $.cookies.del('feedback_Cookie'); 
+       // });
+    $(document).ready(function () {
+	
+	
+		  $('.window .close').click(function (e) {
+            //Cancel the link behavior
+            e.preventDefault();
+            $.cookie('feedback_Cookie', 'Yes', { expires: 365, path: '/' });
+            $('#maskWN').hide();
+            $('.window').hide();
+            var scroll = $(window).scrollTop();
+            $("html").scrollTop(scroll);
+        });
+		
+		 $('#maskWN').click(function () {
+            $(this).hide();
+            $.cookie('feedback_Cookie', 'Yes', { expires: 365, path: '/' });
+            $('.window').hide();
+
+        });
+
+        //        if ($.cookie('feedback_Cookie') == null) {
+        //            var id = '#dialog';
+
+        //            //Get the screen height and width
+        //            var maskHeight = $(document).height();
+        //            var maskWidth = $(window).width();
+        //           
+
+        //            //Set heigth and width to mask to fill up the whole screen
+        //            $('#mask').css({ 'width': '100%', 'height': '100%','position':'fixed' });
+
+        //            //transition effect
+        //            $('#mask').fadeIn(500);
+        //            $('#mask').fadeTo("slow", 0.9);
+
+        //            //Get the window height and width
+        //            var winH = $(window).height();
+        //            var winW = $(window).width();
+
+        //            //Set the popup window to center
+        //            $(id).css('top', winH / 2 - $(id).height() / 2);
+        //            $(id).css('left', winW / 2 - $(id).width() / 2);
+
+        //            //transition effect
+        //            $(id).fadeIn(2000);
+
+
+
+        //        }
+//        $('blockquote p').css('margin','auto');
+//        $('blockquote blockquote blockquote p').contents().contents().unwrap();
+//        $('blockquote blockquote blockquote').contents().unwrap();
+//        $('blockquote blockquote').contents().unwrap();
+//        $('blockquote').contents().unwrap();
+        
+
+        //if close button is clicked
+        $('.window .close').click(function (e) {
+            //Cancel the link behavior
+            e.preventDefault();
+            $.cookie('feedback_Cookie', 'Yes', { expires: 365, path: '/' });
+            $('#mask').hide();
+            $('.window').hide();
+            var scroll = $(window).scrollTop();
+            $("html").scrollTop(scroll);
+        });
+
+        //if mask is clicked
+        $('#mask').click(function () {
+            $(this).hide();
+            $('.window').hide();
+        });
+        $('#feedbackbtn').click(function () {
+            var id = '#dialog';
+
+            //Get the screen height and width
+            var maskHeight = $(document).height();
+            var maskWidth = $(window).width();
+
+            //Set heigth and width to mask to fill up the whole screen
+            //$('#mask').css({ 'width': maskWidth, 'height': maskHeight });
+            $('#mask').css({ 'width': '100%', 'height': '100%', 'position': 'fixed' });
+
+            //transition effect
+            $('#mask').fadeIn(500);
+            $('#mask').fadeTo("slow", 0.9);
+
+            //Get the window height and width
+            var winH = $(window).height();
+            var winW = $(window).width();
+
+            //Set the popup window to center
+            $(id).css('top', winH / 2 - $(id).height() / 2);
+            $(id).css('left', winW / 2 - $(id).width() / 2);
+
+            //transition effect
+            $(id).fadeIn(2000);
+        });
+
+        $('.submit').click(function () {
+            var Name = $("[id*=txtFeedbackName]").val();
+            var Email = $("[id*=txtFeedbackEmail]").val();
+            var Comments = $("[id*=txtFeedbackComments]").val();
+            if (Name == "") {
+
+                alert("Please enter your name");
+                $("[id*=txtFeedbackName]").focus();
+                return false;
+            }
+            else if (Email == "") {
+                alert("Please enter your email");
+                $("[id*=txtFeedbackEmail]").focus();
+                return false;
+            }
+            else if (Email != "" && !ValidateEmail(Email)) {
+                alert("Please enter a valid email address");
+                $("[id*=txtFeedbackEmail]").focus();
+                return false;
+            }
+
+            else if (Comments == "") {
+
+                alert("Please enter some comments");
+                $("[id*=txtFeedbackComments]").focus();
+                return false;
+            }
+
+            else {
+                $('[id*=Button1]').attr('disabled', 'disabled');
+
+                var param = { Name: Name, EmailID: Email, Comments: Comments };
+                $.ajax({
+                    type: "POST",
+                    url: "../Home.aspx/SaveFeedback",
+                    data: JSON.stringify(param),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+
+                    success: function (response) {
+
+                        if (response.d == "0") {
+                            alert("Thank you for your feedback");
+                            $.cookie('feedback_Cookie', 'Yes', { expires: 365, path: '/' });
+                            $('#mask').hide();
+                            $('.window').hide();
+                            $('[id*=Button1]').removeAttr('disabled');
+                            $("[id*=txtFeedbackName]").val("");
+                            $("[id*=txtFeedbackEmail]").val("");
+                            $("[id*=txtFeedbackComments]").val("");
+                        }
+                        else {
+                            alert("Please try again");
+                            $('[id*=Button1]').removeAttr('disabled');
+
+
+                        }
+
+                    }
+                });
+            }
+
+        });
+
+        function ValidateEmail(email) {
+            var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            return expr.test(email);
+        };
+
+        //        $('#divArchiveMain').click(function () {
+        //            
+        //            if ($(window).scrollTop() >= 235) {
+
+        //                $('#DateSettree_lbltree').css('height', '181px');
+        //                $('#DateSettree_lbltree').css('overflow-y', 'scroll');
+        //                $('#DateSettree_lbltree').css('width', '100px');
+
+        //            }
+        //            else {
+        //                $('#DateSettree_lbltree').css('height', '');
+        //                $('#DateSettree_lbltree').css('overflow-y', '');
+        //                $('#DateSettree_lbltree').css('width', '');
+
+        //            }
+        //        });
+
+        $('a.style1').each(function () {
+
+            var $this = $(this);
+            var aHref = $this.attr('class');
+            $this.attr('class', aHref.replace('style1', 'links'));
+        });
+    });
+
+</script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61369961-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/plugins.js"></script>
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/script.js"></script>
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_1_files/Scroll.js"></script>
+<script type="text/javascript" language="javascript">
+
+    DoubleScrollWithTree(document.getElementById('doublescroll'));
+    function GetYearMonth(year, month) {
+        document.getElementById("hdnYear").value = year;
+        document.getElementById("hdnMonth").value = month;
+        document.getElementById("btn").click();
+    }
+    //Implemented onlick for 'archives' link in tree structure
+    function hideshow(divArchive) {
+        if (!document.getElementById(divArchive))
+            return
+        if (document.getElementById(divArchive).style.display == "block")
+            document.getElementById(divArchive).style.display = "none"
+        else
+            document.getElementById(divArchive).style.display = "block"
+    }
+    function SetTreeStyles() {
+        var strYear = document.getElementById("hdnYear").value;
+        var strMonth = document.getElementById("hdnMonth").value
+        if (strYear != "") {
+            var toDay = new Date();
+            document.getElementById("btn" + strYear).setAttribute("class", "accordionButton year active_year");
+            document.getElementById(strYear).style.display = "block"
+            if (strMonth) document.getElementById(strYear + strMonth).setAttribute("class", "active");
+            if (toDay.getFullYear() - 9 > parseInt(strYear)) { document.getElementById("divArchiveSub").style.display = "block" }
+        }
+    }
+</script>
+</div></form><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 1; top: 0px; left: 0px; display: none;"></ul></body></html>

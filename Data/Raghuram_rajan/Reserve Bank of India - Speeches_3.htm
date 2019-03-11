@@ -1,0 +1,1354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js no-flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><script async="" src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/analytics.js"></script><script type="text/javascript" charset="utf-8" id="zm-extension" src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/webrtc-patch.js" async=""></script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Reserve Bank of India - Speeches</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/modernizr-2.js"></script>
+    
+</head>
+<body onload="SetTreeStyles()">
+    <form method="post" action="./BS_SpeechesView.aspx?Id=1009" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTk4NTg1MjM1ZGSBGIzp6f2YD3iTYWH0h/+TqRWD0A==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90B5E9C8">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAhauqkhYyNt7XQrF6+ENJDQlK+XrsQEVyjeDxQ0A4GYXFBwzdjZXczwplb2HKGyLlqLrBfuDtX7nV3nL+5njT0xZDpy7WJnvc3tgXY08CYLJD+rfdwJAuBoVBISURIXWlx9xf1loRXvygROM/A1O+NHJounKCGGAHd04zzVhBPZz8CnllVBJIORm8KXj3rZ8CfageOl">
+</div>
+    <input type="hidden" name="hdnYear" id="hdnYear">
+    <input type="hidden" name="hdnMonth" id="hdnMonth" value="0">
+    
+<link href="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/jquery-ui-1.css" rel="stylesheet" type="text/css">
+<link href="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/print.css" rel="stylesheet" media="print" type="text/css">
+
+<link href="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/960.css" rel="stylesheet" type="text/css">
+<link href="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/rbi.css" rel="Stylesheet" type="text/css">
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/jquery-1.js"></script>
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/jquery.js"></script>
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/ImgSaveDisable.js"></script>
+<!--<script src='//tw.netcore.co.in/smartechclient.js'></script>
+<script>
+smartech('create', 'ADGMOT35CHFLVDHBJNIG50K968AU3Q5FOE3L6REE67CQ9HGBQ58G');
+smartech('register', '4d6884e503ecf55a3339a37e98b711da');
+smartech('identify', '');
+smartech('dispatch', 1, { });
+</script>-->
+<script type="text/javascript">
+
+//Redirect to mobile site start
+    function detectmob() {
+        if (screen.width <= 599 || screen.Height <= 975) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (detectmob()) {
+       window.location.href = "https://m.rbi.org.in" + window.location.pathname;
+		
+       
+    }
+	//Redirect to mobile site End
+    $(document).ready(function () {
+        Search();
+    });
+
+    function Search() {
+        highlightTextAutocomplete();
+        $(".autoSuggest").autocomplete({
+
+
+            source: function (request, response) {
+                var param = { keyWord: document.getElementById('txtSearch').value };
+
+                $.ajax({
+                    url: "../Home.aspx/GetKeywords",
+                    data: JSON.stringify(param),
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+
+                        if (data.d.length > 0) {
+                            response($.map(data.d, function (item) {
+                                return {
+                                    value: RemoveSpecialChars(item)
+
+                                }
+                            }))
+                        }
+                        else {
+                            response([{ label: "No results found", value: ""}]);
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+
+            //            select: function (event, ui) {
+            //                if (ui.item.value != "") {
+            //                    window.open("/scripts/SearchResults.aspx?search=" + ui.item.value, '_blank');
+            //                }
+            //            },
+            minLength: 3
+
+        });
+    }
+
+    function highlightTextAutocomplete() {
+
+        var oldFn = $.ui.autocomplete.prototype._renderItem;
+
+        $.ui.autocomplete.prototype._renderItem = function (ul, item) {
+
+            var t = String(item.value).replace(
+                new RegExp(this.term, "gi"),
+                "<span class='ui-state-highlight'>$&</span>");
+            if (item.value != "") {
+                return $("<li class='borderAutocomplete'></li>")
+                  .data("item.autocomplete", item)
+                  .append("<a>" + t + "</a>")
+                  .appendTo(ul);
+            }
+
+            else {
+                return $("<li></li>")
+                  .data("item.autocomplete", item)
+                  .append("")
+                  .appendTo(ul);
+            }
+        };
+    }
+
+
+    function RemoveSpecialChars(inputText) {
+        var filteredString = inputText.replace(/[\*\^\'\!\@\$\.\#\(\)\-\?\<\>\;\"\&\+\{\}\:]/g, '');
+        //alert(filteredString);
+        return filteredString;
+    }
+    //    jQuery(document).ready(function () {
+    //        var xmlhttp;
+    //        jQuery("#txtSearch").autocomplete(
+    //                    {
+    //                        minLength: 3,
+    //                        delay: 0,
+    //                        source: function (request, response) {
+    //                            if (!xmlhttp) {
+    //                                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+    //                                    xmlhttp = new XMLHttpRequest();
+    //                                }
+    //                                else {// code for IE6, IE5
+    //                                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    //                                }
+    //                            }
+    //                            else if (xmlhttp.readyState != 0) {
+    //                                xmlhttp.abort();
+    //                            }
+    //                            xmlhttp.onreadystatechange = function () {
+    //                                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    //                                    fetchedKeywords = xmlhttp.responseText.split("'");
+    //                                    
+    //                                    if (fetchedKeywords.length > 10) {
+    //                                        fetchedKeywords.splice(10, fetchedKeywords.length - 10);
+    //                                    }
+    //                                    if (fetchedKeywords != "") response(fetchedKeywords);
+    //                                    else response(null);
+    //                                }
+    //                            }
+    //                            var input = document.getElementById("txtSearch").value;
+    //                            xmlhttp.open("POST", "/Webservice/KeywordSearch.ashx?q=" + input, true);
+    //                            xmlhttp.send();
+    //                        }
+    //                    });
+    //    });
+
+    function LoadSearchData(id, key) {
+        if (id == "txtSearch") {
+            if (key == 13) {
+                validateSearchText();
+                return false;
+            }
+        }
+        else validateSearchText();
+        return true;
+    }
+    function validateSearchText() {
+        if (validation()) {
+            var strloc = new String(document.location.href.toString());
+            if (strloc.indexOf("SearchResults.aspx") == -1) {//             
+                window.open("/scripts/SearchResults.aspx?search=" + document.getElementById("txtSearch").value);
+            }
+            else window.open("/scripts/SearchResults.aspx?search=" + document.getElementById("txtSearch").value, '_parent');
+        }
+    }
+    function validation() {
+        strSearch = trim(document.getElementById('txtSearch').value);
+        if (strSearch == "") { alert('Please enter the search text'); return false; }
+        else {
+            //var strFilterChars = new RegExp("[~`!@#$%^&*()_+-={}\\[\\]:/\\\\\";|'<>,.?]");
+            var strFilterChars = new RegExp("^[0-9a-zA-Z ]*$");
+            if (!strFilterChars.test(strSearch)) { alert("Please remove special characters from search text"); return false; }
+        }
+        return true;
+    }
+    function trim(value) {
+        value = value.replace(/^\s+/, '');
+        value = value.replace(/\s+$/, '');
+        return value;
+    }
+</script>
+
+    <style type="text/css">
+    .blink_msm1 
+{
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 3s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+    animation-name: blinker;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+</style>
+<div class="top_setting">
+    <div class="container_12">
+        <div class="grid_5 top_settings">
+            <a href="#mainsection">Skip to main content </a>
+        </div>
+        <div id="UsrFontCntr_tblThemes" style="float: right" class="grid_4 prefix_3 top_settings">
+            <span class="fonts">
+                <a id="UsrFontCntr_LinkBtnFontIncrease" title="Increase Font Size" href="javascript:__doPostBack('UsrFontCntr$LinkBtnFontIncrease','')" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/font-increase.gif" alt="Increase Font Size"></a></span>
+            <span class="fonts">
+                <a id="UsrFontCntr_LinkBtnFontRegular" class="aspNetDisabled" title="Regular Font Size" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/font-reset.gif" alt="Regular Font Size"></a></span>
+            <span class="fonts">
+                <a id="UsrFontCntr_LinkBtnFontDecrease" title="Decrease Font Size" href="javascript:__doPostBack('UsrFontCntr$LinkBtnFontDecrease','')" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/font-decrease.gif" alt="Decrease Font Size"></a></span>
+            <span class="black">
+                <a id="UsrFontCntr_LinkBtnAccessibilty" title="Apply Dark Theme" href="javascript:__doPostBack('UsrFontCntr$LinkBtnAccessibilty','')" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/dark-theme.gif" alt="Apply Dark Theme"></a></span>
+            <span class="white">
+                <a id="UsrFontCntr_LinkBtnUndoAccessibilty" class="aspNetDisabled" title="Apply Normal Theme" style="text-decoration:none;"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/bright-theme.gif" alt="Apply Normal Theme"></a></span>
+            <a onclick="javascript:window.print();" id="A1" title="Print This Page">
+                <img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/print-icon.png" alt="Print this page" class="print"></a>
+            <div style="float: right">
+                <label style="margin-right: 6px;color: #000000;">
+                    Language</label><a class="lnk-language" id="lnkhindi" title="Hindi site" href="https://www.rbi.org.in/hindi/Home.aspx">हिंदी</a></div>
+                    
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+</div>
+<div class="container_12">
+    <div class="grid_5" role="banner">
+        <h1 class="logo">
+            <a href="https://rbi.org.in/home.aspx">
+                <img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/rbi-company-logo.jpg" alt="Reserve Bank of India"></a></h1>
+    </div>
+    <div class="grid_5" role="search" style="float: right" align="right">
+        <label for="searchbox" class="search_label">
+            Search the Website</label>
+        <input name="UsrFontCntr$txtSearch" type="text" maxlength="103" id="txtSearch" class="search_box autoSuggest ui-autocomplete-input" onkeydown="return LoadSearchData('txtSearch',event.keyCode);" placeholder="Search" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+        <button id="btnSearch" onclick="return LoadSearchData('btnSearch',event.keyCode);" type="button" class="search_button">
+            Search</button>
+    </div>
+    <div class="clearfix">
+    </div>
+</div>
+<!--  NAVIGATION START-->
+<nav role="navigation">
+    <div class="top_menu">
+      <div class="container_12">
+        <div class="grid_12">
+          <div id="mydroplinemenu" class="droplinebar">
+            <ul>
+              <li><a href="https://rbi.org.in/home.aspx">Home</a></li>
+              <li><a href="https://rbi.org.in/Scripts/AboutusDisplay.aspx">About Us</a></li>
+              <li><a href="https://rbi.org.in/Scripts/NotificationUser.aspx">Notifications</a></li>
+              
+              <li><a href="https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx">Press Releases</a></li>
+              <li><a href="https://rbi.org.in/Scripts/BS_ViewSpeeches.aspx">Speeches</a></li>
+              <li><a href="#">Publications<img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/down.gif" class="downarrowclass" style="border:0; padding-left: 5px"></a>
+                <ul style="display: none; visibility: visible; width: 1060px;">
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Annual">Annual</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=HalfYearly">Half-Yearly</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Quarterly">Quarterly</a></li>
+		  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Bimonthly">Bi-monthly</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Monthly">Monthly</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Weekly">Weekly</a></li>
+                  <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Occasional">Occasional</a></li>
+                   <li><a href="https://rbi.org.in/Scripts/Publications.aspx?publication=Reports">Reports</a></li>
+		   <li><a href="https://rbi.org.in/Scripts/OccasionalPublications.aspx?head=Working%20Papers">Working Papers</a></li>
+                  <!--<li><a href="/Scripts/Publications.aspx?publication=Lectures">Lectures</a></li>-->
+                </ul>
+              </li>
+	      <li><a href="https://rbi.org.in/Scripts/Lectures.aspx">Memorial Lectures</a></li>
+	      <li><a href="https://rbi.org.in/Scripts/MSM_MintStreetMemos.aspx"><span>Mint Street Memos</span></a></li>
+               <li><a href="#">Research<img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/down.gif" class="downarrowclass" style="border:0; padding-left: 5px"></a>
+           <ul style="display: none; visibility: visible; width: 1060px;">
+             <li><a href="https://rbi.org.in/Scripts/ExternalResearchSchemes.aspx">External Research Schemes</a></li>
+             <li><a href="https://rbi.org.in/Scripts/QuarterlyPublications.aspx?head=Occasional%20Papers">RBI Occasional Papers</a></li>
+             <li><a href="https://rbi.org.in/Scripts/OccasionalPublications.aspx?head=Working%20Papers">Working Papers</a></li>
+             <li><a href="https://rbi.org.in/Scripts/BS_ViewBulletin.aspx">RBI Bulletin</a></li>
+             <li><a href="https://rbi.org.in/Scripts/Project1.aspx">History</a></li>
+             <li><a href="https://rbi.org.in/Scripts/Occas_DRG_Studies.aspx">DRG Studies</a></li>
+             <li><a href="https://rbi.org.in/Scripts/KLEMS.aspx">KLEMS</a></li>
+			 <li><a href="https://rbi.org.in/Scripts/StateStatisticsFinances.aspx">State Statistics and Finances</a></li>
+            
+           </ul>
+           </li>
+              <!--<li><a href="#">Statistics</a>
+                <ul>
+                  <li><a href="../Scripts/Statistics.aspx">Data Releases</a></li>
+                 
+                  <li><a href="https://dbie.rbi.org.in/DBIE/dbie.rbi?site=home" target="_blank">Database on Indian Economy</a></li>
+                  <li><a href="../Scripts/KLEMS.aspx" target="_blank">KLEMS database</a></li>
+				  <li><a href="../Scripts/FS_PDS.aspx" target="_blank">Public Debt Statistics</a></li>
+                </ul>
+              </li>-->
+
+		<li><a href="#">Statistics<img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/down.gif" class="downarrowclass" style="border:0; padding-left: 5px"></a>
+                <ul style="display: none; visibility: visible; width: 1060px;">
+                  <li><a href="https://rbi.org.in/Scripts/Statistics.aspx">Data Releases</a></li>
+                  
+                  <li><a href="https://dbie.rbi.org.in/DBIE/dbie.rbi?site=home" target="_blank">Database on Indian Economy</a></li>
+		  <li><a href="https://rbi.org.in/scripts/FS_PDS.aspx">Public Debt Statistics</a></li>
+                </ul>
+              </li>
+             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+<!--  NAVIGATION END-->
+<!--HEADER END-->
+<input type="submit" name="UsrFontCntr$btn" value="" id="btn" style="visibility: hidden; height: 0px; width: 0px;">
+
+
+    <div>
+        <div class="container_12">
+            <a id="mainsection" name="mainsection"></a>
+            <div class="grid_12 breadcrumbs">
+                <ul>
+                    <li><a href="https://rbi.org.in/Home.aspx">Home</a></li>
+                    <span id="lblNav"><li><a href="https://rbi.org.in/scripts/BS_ViewSpeeches.aspx">Speeches</a></li></span>
+                </ul>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="grid_11 omega right_blue_border">
+                <div id="annual" class="text1">
+                    
+                    <h2 class="page_title">
+                        Speeches</h2>
+                    <div>
+                        <div id="doublescroll">
+                            <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                                </table><table class="tablebg" width="100%"><tbody><tr><td class="tableheader"><a target="_blank" href="http://rbidocs.rbi.org.in/rdocs/Speeches/PDFs/RSBS220616AF29FC8F00A048B58685073669B575C5.PDF"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/pdf.gif" border="0" align="absmiddle"></a> (325 kb)</td></tr><tr><td class="tableheader" align="right"><b> Date : </b>Jun 22, 2016</td></tr><tr><td class="tableheader" align="center"><b>Resolving Stress in the Banking System</b><br>(Dr. Raghuram G. Rajan, Governor - June 22, 2016 - at ASSOCHAM – Interactive Meet with Industry &amp; Trade, Bengaluru)</td></tr><tr class="tablecontent2"><td><table class="td" width="100%" border="0" align="center">  <tbody><tr>    <td><p>Thank
+ you very much for inviting me to give this talk. Ordinarily, in a city 
+like Bengaluru, we would talk about startups. Today, however, I want to 
+talk about the resolution of financial distress. I will argue that the 
+slowdown in credit growth has been largely because of stress in the 
+public sector banking and not because of high interest rates. As such, 
+what is required is a clean-up of the balance sheets of public sector 
+banks, which is what is underway and needs to be taken to its logical 
+conclusion.&nbsp; Specifically, I will describe what we have been doing 
+in India to change the culture surrounding the loan contract. To start, 
+let us look at public sector credit growth compared with the growth in 
+credit by the new private banks. </p>      <p class="head" align="justify">Public Sector Lending vs Private Sector Lending</p>    <p align="justify">As <a href="#C1" class="links">chart 1</a>
+ (Credit in India) shows, public sector bank non-food credit growth has 
+been falling relative to credit growth from the new private sector banks
+ (Axis, HDFC, ICICI, and IndusInd) since early 2014. This is reflected 
+not only in credit to industry (<a href="#C2" class="links">Chart 2</a>), but also in micro and small enterprise credit (<a href="#C3" class="links">Chart 3</a>).<a href="#F1" class="links"><sup>2</sup></a> The relative slowdown in credit growth, albeit not so dramatic, is also seen in agriculture (<a href="#C4" class="links">Chart 4</a>),
+ though growth is picking up once again. Whenever one sees a slowdown in
+ lending, one could conclude there is no demand for credit – firms are 
+not investing. But what we see here is a slowdown in lending by public 
+sector banks vis a vis private sector banks. Why is that?</p>    <div align="center"><a id="C1"></a><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/RSBS220616_1.jpg"><br>      <a id="C2"></a><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/RSBS220616_2.jpg"><br>     <a id="C3"></a> <img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/RSBS220616_3.jpg"><br>      <a id="C4"></a><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/RSBS220616_4.jpg"></div>    <p align="justify">The
+ immediate conclusion one should draw is that this is something 
+affecting credit supply from the public sector banks specifically, 
+perhaps it is the lack of bank capital. Yet if we look at personal loan 
+growth (<a href="#C5" class="links">Chart 5</a>), and specifically housing loans (<a href="#C6" class="links">Chart 6</a>),
+ public sector bank loan growth approaches private sector bank growth. 
+The lack of capital therefore cannot be the culprit. Rather than an 
+across-the-board shrinkage of public sector lending, there seems to be a
+ shrinkage in certain areas of high credit exposure, specifically in 
+loans to industry and to small enterprises. The more appropriate 
+conclusion then is that public sector banks were shrinking exposure to 
+infrastructure and industry risk right from early 2014 because of 
+mounting distress on their past loans. Private sector banks, many of 
+which did not have these past exposures, were more willing to service 
+the mounting demand from both their traditional borrowers, as well as 
+some of those corporates denied by the public sector banks. Given, 
+however, that public sector banks are much bigger than private sector 
+banks, private sector banks cannot substitute fully for the slowdown in 
+public sector bank credit. We absolutely need to get public sector banks
+ back into lending to industry and infrastructure, else credit and 
+growth will suffer as the economy picks up.</p>    <div align="center"><a id="C5"></a><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/RSBS220616_5.jpg"><br><a id="C6"></a><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/RSBS220616_6.jpg"></div>    <p align="justify">These
+ charts refute another argument made by those who do not look at the 
+evidence – that stress in the corporate world is because of high 
+interest rates. Interest rates set by private banks are usually equal or
+ higher than rates set by public sector banks. Yet their credit growth 
+does not seem to have suffered. The logical conclusion therefore must be
+ that it is not the level of interest rates that is the problem. 
+Instead, stress is because of the loans already on PSB balance sheets, 
+and their unwillingness to lend more to those sectors to which they have
+ high exposure.</p>    <p align="justify">There are two sources of 
+distressed loans – the fundamentals of the borrower not being good, and 
+the ability of the lender to collect being weak. Both are at work in the
+ current distress.</p>    <p class="head" align="justify">The Sources of Lending Distress: Bad Fundamentals</p>    <p align="justify">Why
+ have bad loans been made? A number of these loans were made in 
+2007-2008. Economic growth was strong and the possibilities limitless. 
+Deposit growth in public sector banks was rapid, and a number of 
+infrastructure projects such as power plants had been completed on time 
+and within budget. It is at such times that banks make mistakes. They 
+extrapolate past growth and performance to the future. So they are 
+willing to accept higher leverage in projects, and less promoter equity.
+ Indeed, sometimes banks signed up to lend based on project reports by 
+the promoter’s investment bank, without doing their own due diligence. 
+One promoter told me about how he was pursued then by banks waving 
+checkbooks, asking him to name the amount he wanted. This is the 
+historic phenomenon of irrational exuberance, common across countries at
+ such a phase in the cycle.</p>    <p align="justify">The problem is 
+that growth does not always take place as expected. The years of strong 
+global growth before the global financial crisis were followed by a 
+slowdown, which extended even to India, showing how much more integrated
+ we had become with the world. Strong demand projections for various 
+projects were shown to be increasingly unrealistic as domestic demand 
+slowed down. Moreover, a variety of governance problems coupled with the
+ fear of investigation slowed down bureaucratic decision making in 
+Delhi, and permissions for infrastructure projects became hard to get. 
+Project cost overruns escalated for stalled projects and they became 
+increasingly unable to service debt.</p>    <p align="justify">I am not 
+saying that there was no malfeasance – the country’s investigative 
+agencies are looking into some cases such as those where undue influence
+ was used in getting loans, or where actual fraud has been committed by 
+diverting funds out of a company, either through over-invoicing imports 
+sourced via a promoter-owned subsidiary abroad or exporting to related 
+shell companies abroad and then claiming they defaulted. I am saying 
+that, typically, there were factors other than malfeasance at play, and a
+ number of genuine committed entrepreneurs are in trouble, as are banks 
+that made reasonable business decisions given what they knew then.</p>    <p class="head" align="justify">The Sources of Lending Distress: Poor Monitoring and Collection</p>    <p align="justify">The
+ truth is, even sensible lending will entail default. A banker who lends
+ with the intent of never experiencing a default is probably 
+over-conservative and will lend to too few projects, thus hurting 
+growth. But sensible lending means careful assessment up front of 
+project prospects, which I have argued may have been marred by 
+irrational exuberance or excessive dependence on evaluations by others. 
+Deficiencies in evaluation can be somewhat compensated for by careful 
+post-lending monitoring, including careful documentation and perfection 
+of collateral, as well as ensuring assets backing promoter guarantees 
+are registered and tracked. Unfortunately, too many projects were left 
+weakly monitored, even as costs increased. Banks may have expected the 
+lead bank to exercise adequate due diligence, but this did not always 
+happen. Moreover, as a project went into distress, private banks were 
+sometimes more agile in securing their positions with additional 
+collateral from the promoter, or getting repaid, even while public 
+sector banks continued supporting projects with fresh loans. Promoters 
+astutely stopped infusing equity, and sometimes even stopped putting in 
+effort, knowing the project was unlikely to repay given the debt 
+overhang.</p>    <p align="justify">The process for collection, despite 
+laws like SARFAESI intended to speed up secured debt collection, has 
+been prolonged and costly, especially when banks face large, 
+well-connected promoters. The government has proposed reforms to the 
+judicial process, including speeding up the functioning of the Debt 
+Recovery Tribunals, which should make it easier for banks to collect, 
+but those legislative reforms are before Parliament. Knowing that banks 
+would find it hard to collect, some promoters encouraged them to 
+“double-up” by expanding the scale of the project, even though the 
+initial scale was unable to service debt. Of course, the unscrupulous 
+among the promoters continued to divert money from the expanded lending,
+ increasing the size of the problem on bank balance sheets.</p>    <p align="justify">The
+ inefficient loan recovery system then gives promoters tremendous power 
+over lenders. Not only can they play one lender off against another by 
+threatening to divert payments to the favored bank, they can also refuse
+ to pay unless the lender brings in more money, especially if the lender
+ fears the loan becoming a Non-Performing Asset. Sometimes promoters can
+ offer miserly one-time settlements (OTS) knowing that the system will 
+ensure the banks can collect even secured loans only after years. 
+Effectively, loans in such a system become implicit equity, with a tough
+ promoter enjoying the upside in good times, and forcing banks to absorb
+ losses in bad times, even while he holds on to his equity.</p>    <p class="head" align="justify">Cleaning Up the Banks: Principles</p>    <p align="justify">The world over, there are three cardinal rules when faced with incipient distress.</p>    <p align="justify">1)
+ Viability does not depend on the debt outstanding, but on economic 
+value. Debt may have to be written down to correspond to what is viable.</p>    <p align="justify">Because
+ of changed circumstances, demand may be lower and project cash flows 
+may be significantly lower than projected earlier. The project has 
+economic value when completed – in the sense that operating cash flows 
+are positive, but much less than the interest on the debt it carries. If
+ the debt is not written down, the project continues as an NPA, even 
+while the promoter, knowing it cannot repay, loses interest. If 
+neglected, the project may stop generating any cash flows and the assets
+ may depreciate rapidly.</p>    <p align="justify">2) Complete projects that are viable, even if it requires additional funds infusion.</p>    <p align="justify">Stalled
+ projects do not get any better over time. If there are small 
+investments needed to complete the project, and the promoter has no 
+funds, it may still make sense to lend to it, even while writing down 
+the overall debt. Essentially, the new loan makes it possible to 
+generate operating cash flows to service some debt, even if not all the 
+outstanding debt.</p>    <p align="justify">3) Don’t throw good money after bad money simply because there is an unreliable promise that debt will become serviceable.</p>    <p align="justify">This
+ is the opposite of (2). If the project is unviable, doubling its size 
+does not make it any more viable. Promoters that have over-borrowed 
+often propose an increase in scale so that the bank’s outstanding debt 
+and new loans will all become serviceable. Perhaps it would be better 
+for the bank to write down its loans to the initial project, rather than
+ going deeper into the hole because the promoter may incur new 
+cost-overruns as he expands. An incompetent or unreliable promoter will 
+remain so even when scale expands.</p>    <p class="head" align="justify">Bank Moral Hazard</p>    <p align="justify">Unfortunately,
+ the incentives built into the public sector banking system have made it
+ more difficult for public sector bank executives to follow these 
+principles (I should add that some private sector bank executives have 
+also not been immune on occasion). The short tenure of managers means 
+they are unwilling to recognize losses immediately, and more willing to 
+postpone them into the future for their successors to deal with. Such 
+distorted incentives lead to overlending to or “ever-greening” unviable 
+projects. Unfortunately, also, the taint of NPA immediately makes them 
+reluctant to lend to a project even if it is viable, for fear that the 
+investigative agencies will not buy their rationale for lending. The 
+absence of sound and well documented loan evaluation and monitoring 
+practices by banks makes such an outcome more likely. So excessive 
+lending to bad projects and too little lending to viable ones can 
+coexist.</p>    <p class="head" align="justify">The Regulator’s Dilemma</p>    <p align="justify">For
+ regulator who wants the banking system to clean up so it can start 
+lending again, this creates a variety of objectives, which can be 
+somewhat conflicting. First, we want banks to recognize loan distress 
+and disclose it, not paper over it by ever-greening unviable projects. 
+Loan classification is merely good accounting – it reflects what the 
+true value of the loan might be. It is accompanied by provisioning, 
+which ensures the bank sets aside a buffer to absorb likely losses. If 
+the losses do not materialize, the bank can write back provisioning to 
+profits. If the losses do materialize, the bank does not have to 
+suddenly declare a big loss, it can set the losses against the 
+prudential provisions it has made. Thus the bank balance sheet then 
+represents a true and fair picture of the bank’s health, as a bank 
+balance sheet is meant to.</p>    <p align="justify">Second, we want 
+them to be realistic about the project’s cash generating capacity, and 
+structure lending and repayment to match that.</p>    <p align="justify">Third, we want them to continue lending to viable projects, even if they had to be restructured in the past and are NPAs.</p>    <p align="justify">The
+ problem is that any forbearance in labeling loans NPAs on restructuring
+ makes it easier to avoid disclosure and indulge in ever-greening. On 
+the other hand, strict disclosure and classification rules could imply a
+ cessation of lending to even viable projects. There are no clean 
+solutions here given the kind of incentives in the system, and given the
+ absence of an operational bankruptcy code in India. Therefore, the RBI 
+has had to adopt a pragmatic approach to the clean-up, creating new 
+enabling processes.</p>    <p class="head" align="justify">The RBI’s Approach</p>    <p align="justify">Our
+ first task was to make sure that all banks had information on who had 
+lent to a borrower. So we created a large loan database (CRILC) that 
+included all loans over Rs. 5 crore, which we shared with all the banks.
+ The CRILC data included the status of each loan – reflecting whether it
+ was performing, already an NPA or going towards NPA. That database 
+allowed banks to identify early warning signs of distress in a borrower 
+such as habitual late payments to a segment of lenders.</p>    <p align="justify">The
+ next step was to coordinate the lenders through a Joint Lenders' Forum 
+(JLF) once such early signals were seen. The JLF was tasked with 
+deciding on an approach for resolution, much as a bankruptcy forum does.
+ Incentives were given to banks for reaching quick decisions. We have 
+also tried to make the forum more effective by reducing the need for 
+everyone to agree, even while giving those who are unconvinced by the 
+joint decision the opportunity to exit.</p>    <p align="justify">We 
+also wanted to stop restructuring of unviable projects by banks who want
+ to avoid recognizing losses – so we ended the ability of banks to 
+restructure projects without calling them NPA in April 2015. At the same
+ time, a number of long duration projects such as roads had been 
+structured with overly rapid required repayments, even though cash flows
+ continued to be available decades from now. So we allowed such project 
+payments to be restructured through the 5/25 scheme provided the long 
+dated future cash flows could be reliably established. Of course, there 
+was always the possibility of banks using this scheme to evergreen, so 
+we have monitored how it works in practice, and continue tweaking the 
+scheme where necessary so that it achieves its objectives.</p>    <p align="justify">Because
+ promoters were often unable to bring in new funds, and because the 
+judicial system often protects those with equity ownership, together 
+with SEBI we introduced the Strategic Debt Restructuring (SDR) scheme so
+ as to enable banks to displace weak promoters by converting debt to 
+equity. We did not want banks to own projects indefinitely, so we 
+indicated a time-line by which they had to find a new promoter.</p>    <p align="justify">All
+ these new tools (including some I do not have the space to describe) 
+effectively created a resolution system that replicated an out-of-court 
+bankruptcy. Banks now had the power to resolve distress, so we could 
+push them to exercise these powers by requiring recognition. This is 
+what the Asset Quality Review, completed in October 2015 and 
+subsequently shared with banks, sought to accomplish. Since then banks 
+have classified existing distressed loans appropriately, and since March
+ 2016 are looking at their weak-but-not-yet-distressed portfolio for 
+necessary actions. There is a change in culture, and banks have been 
+quite willing to get into the spirit of the AQR. Many have gone 
+significantly beyond our indications in what they have cleaned up by the
+ quarter ending March 2016. Of course, once the banks have properly 
+classified a non-performing loan and provisioned against it, their 
+incentive to evergreen or avoid writing down the debt to appropriate 
+levels is diminished.</p>    <p align="justify">Nevertheless, clean-up 
+is ongoing work. The SDR scheme dealt with weak promoters. But some 
+promoters are competent even while their projects are overly indebted. 
+The ‘Scheme for Sustainable Structuring of Stressed Assets’ (S4A) is an 
+optional framework for the resolution of large stressed accounts. The 
+S4A envisages determination of the sustainable debt level for a stressed
+ borrower, and bifurcation of the outstanding debt into sustainable debt
+ and equity/quasi-equity instruments which are expected to provide 
+upside to the lenders when the borrower turns around. Thus 
+capable-but-over-indebted promoters have some incentive to perform, and 
+because the project is not deemed an NPA if adequate provisions are 
+made, public sector banks continue lending to it if necessary.</p>    <p align="justify">Most
+ recently, the government is contemplating a fund to lend into 
+distressed situations, with significant participation by third parties, 
+so that new loans can be made to viable distressed projects. Provided 
+decision making is not dominated by banks whose very loans are 
+distressed, this could be an effective vehicle to speed up resolution.</p>    <p class="head" align="justify">Why So Many Schemes and Why the Constant Tinkering</p>    <p align="justify">The
+ sources of borrower distress are many, and we have sought to provide 
+lenders with a menu of options to deal with it, even while limiting 
+their discretion to paper over the problem. Effectively the RBI has been
+ trying to create an entirely new bad loan resolution process in the 
+absence of an effective bankruptcy system. We have had to tinker, since 
+each scheme’s effectiveness, while seemingly obvious when designing, has
+ to be monitored in light of the distorted incentives in the system. As 
+we learn, we have adapted regulation. Our objective is not to be 
+theoretical but to be pragmatic, even while subjecting the system to 
+increasing discipline and transparency.</p>    <p align="justify">The 
+good news is that banks are getting into the spirit of the cleanup, and 
+pursuing reluctant promoters to take the necessary steps to rehabilitate
+ projects. Indebted promoters are being forced to sell assets to repay 
+lenders. We will shortly license a number of new Asset Reconstruction 
+Companies (ARCs) to provide a deeper market for stressed assets. We are 
+also working on a framework to enhance efficiency and transparency of 
+price discovery in sale of stressed assets by banks to ARCs. Bank 
+investors, after initially getting alarmed by the size of the 
+disclosures, have bid up PSB bank shares. To the extent that these are 
+still trading at a fraction of book value, there is still room for 
+upward valuation if the banks can improve the prospects of recovery. The
+ new schemes, as well as the improving economy, should help.</p>    <p class="head" align="justify">Fraud and Willful default</p>    <p align="justify">Even
+ while we make it easier for committed promoters to restructure when 
+they experience bad luck or unforeseen problems, we should reduce the 
+ability of the fraudster or the willful defaulter, who can pay but 
+simply is disinclined to do so, or the fraudster, to get away. This is 
+why it is extremely important that banks do not use the new flexible 
+schemes for promoters who habitually misuse the system (everyone knows 
+who these are) or for fraudsters. The threat of labeling a promoter a 
+willful defaulter could be effective in the former case, and we have 
+coordinated with SEBI to increase penalties for willful defaulters. For 
+fraudsters, quick and effective investigation by the investigative 
+agencies is extremely important. We should send the message that no one 
+can get away, and I am glad that the Prime Minister’s Office is pushing 
+prosecution of large frauds. The RBI has set up a fraud monitoring cell 
+to coordinate the early reporting of fraud cases to the investigative 
+agencies. And for those who have diverted money out of their companies, 
+especially into highly visible assets abroad, a stern message sent by 
+bankers sitting together with investigative agencies should help send 
+the message that the alternatives to repayment can be harsh.</p>    <p class="head" align="justify">Bank Risk Aversion</p>    <p align="justify">Bankers
+ often argue that the easiest people to label in a fraud are the bankers
+ themselves, who often could be victims rather than perpetrators. 
+Similarly, they accuse the vigilance authorities of excessive zeal when 
+loans go bad, of immediately suspecting bankers of malfeasance when the 
+bad loan could be an unintended consequence of sensible risk taking. 
+Unfortunately, all too often, such investigations also uncover sloppy 
+due diligence or loan monitoring by bankers. After the fact, it is hard 
+to distinguish sensible risk taking from carelessness or from 
+corruption. While the vigilance authorities continuously attempt to 
+reassure bankers that they are not vigilantes, the bankers themselves 
+know that their own enthusiasm and deficiencies can expose them to 
+unwarranted accusations of corruption.</p>    <p align="justify">Certainly,
+ part of the solution is for bankers to pull up their socks. But another
+ part of the solution is to not label a banker based on the outcome of a
+ single loan but instead look for a pattern across loans. A banker who 
+makes an excessive number of bad loans compared to his cohort deserves, 
+at the very least, to be questioned. But the banker who makes the 
+occasional bad loan amidst a lot of good ones probably needs to be 
+rewarded. Such pattern-based monitoring by bank authorities, with 
+serious punishment through vigilance action only if there is evidence of
+ money changing hands, could control malfeasance while rewarding risk 
+taking. This does require some changes in the current system, including 
+de-emphasizing the committee based approach to loan approval in banks, 
+which appears to diffuse responsibility for loan decisions.</p>    <p class="head" align="justify">What Responsibility does the RBI have?</p>    <p align="justify">Bankers
+ sometimes turn around and accuse regulators of creating the bad loan 
+problem. The truth is bankers, promoters, and circumstances create the 
+bad loan problem. The regulator cannot substitute for the banker’s 
+commercial decisions or micromanage them or even investigate them when 
+they are being made. Instead, in most situations, the regulator can at 
+best warn about poor lending practices when they are being undertaken, 
+and demand banks hold adequate risk buffers. The important duty of the 
+regulator is to force timely recognition of NPAs and their disclosure 
+when they happen. Forbearance may be a reasonable but risky regulatory 
+strategy when there is some hope that growth will pick up soon and the 
+system will recover on its own. Everyone – banker, promoter, investors, 
+and government officials – often urge such a strategy because it kicks 
+the problem down the road, hopefully for someone else to deal with. The 
+downside is that when growth does not pick up, the bad loan problem is 
+bigger, and dealing with it is more difficult. It is when the bad loan 
+problem is allowed to accumulate through forbearance or non-recognition 
+that regulators have the difficult task of bringing the system back on 
+track. That is the problem we have had to deal with at the RBI.</p>    <p align="justify">As
+ I have shown you, the consequence since early 2014 of the past build-up
+ of stressed loans was a slowdown in public sector bank lending in 
+certain sectors. The cessation of RBI forbearance and the Asset Quality 
+Review in mid 2015 were therefore not responsible for the slowdown. 
+Instead, high distressed exposures in certain sectors were already 
+occupying PSB management attention and holding them back. The only way 
+for them to supply the economy’s need for credit, which is essential for
+ higher economic growth, was to clean up and recapitalize.</p>    <p align="justify">The
+ silver lining message in the slower credit growth is that banks have 
+not been lending indiscriminately in an attempt to reduce the size of 
+stressed assets in an expanded overall balance sheet, and this bodes 
+well for future slippages. In sum, to the question of what comes first, 
+clean up or growth, I think the answer is unambiguously “Clean up!”. 
+Indeed, this is the lesson from every other country that has faced 
+financial stress. It is important, therefore, that the clean-up proceeds
+ to its conclusion, without any resort to regulatory forbearance once 
+again.</p>    <p align="justify">Sometimes, easier monetary policy is 
+proposed as an answer to reducing the bad debt problem. For the heavily 
+indebted promoter, however, easier monetary policy will typically bring 
+no relief. Even with lower policy rates, the bank, which is typically 
+not made whole even if it grabs all the borrower’s cash flows, has no 
+incentive to reduce the interest rate the borrower can pay. And few 
+banks are competing for that borrower’s business, so there is no 
+competition to force down loan rates. The bottom line is that easier 
+monetary policy is no answer to serious distress, contrary to widespread
+ belief.</p>    <p class="head" align="justify">What can the Government do?</p>    <p align="justify">The
+ government is in the process of speeding up the debt recovery process, 
+and creating a new Bankruptcy system. These are important steps to 
+improve the resolution process. In the near term, however, two actions 
+will pay large dividends.</p>    <p align="justify">The first is to 
+improve the governance of public sector banks so that we are not faced 
+with this situation again. The Government, through the Indradhanush 
+initiative, has sent a clear signal that it wants to make sure that 
+public sector banks, once healthy, stay healthy. Breaking up the post of
+ Chairman and Managing Director, strengthening Board and management 
+appointments through the Banks Board Bureau, decentralizing more 
+decisions to the professional board, finding ways to incentivize 
+management, all these will help improve loan evaluation, monitoring and 
+repayment.</p>    <p align="justify">The second is to infuse bank 
+capital, with some of the infusion related to stronger performance, so 
+that better banks have more room to grow. Capital infusion into weak 
+banks should ideally accompany an improvement in governance, but given 
+the need for absorbing the losses associated with balance sheet clean 
+up, better that government capital be infused quickly. Governments are 
+sometimes reluctant to infuse bank capital because there are so many 
+more pressing demands for funds. Yet, there are few higher return 
+activities than capitalizing the public sector banks so that they can 
+support credit growth. Finally, the Economic Survey has suggested the 
+RBI should capitalize public sector banks. This seems a non-transparent 
+way of proceeding, getting the banking regulator once again into the 
+business of owning banks, with attendant conflicts of interest.</p>    <p align="justify">Better
+ that the RBI pay the government the maximum dividend that it can, 
+retaining just enough surplus buffers that are consistent with good 
+central bank risk management practice. Indeed, this is what we do, and 
+in the last three years, we have paid all our surplus to the government.
+ Separately, the government can infuse capital into the banks. The two 
+decisions need not be linked. Alternatively, a less effective form of 
+capital, if the government cannot buy bank equity directly with cash, is
+ for it to issue the banks “Government Capitalization Bonds” in exchange
+ for equity. The banks would hold the bonds on their balance sheet. This
+ would tie up part of their balance sheet, but would certainly be 
+capital.</p>    <p class="head" align="justify">Conclusion</p>    <p align="justify">The
+ cleaning up of bank balance sheets, and the restoration of credit 
+growth are vital, related elements in the growth agenda. The government 
+and the RBI are helping our public sector bankers in this difficult but 
+critical task. I know the process is working, so public sector banks 
+will soon be set to finance the enormous needs of this economy once 
+again.</p><hr>    <p class="footnote" align="justify"> <sup>1 </sup>Speech
+ by Dr. Raghuram G. Rajan, Governor, Reserve Bank of India, at ASSOCHAM –
+ Interactive Meet with Industry &amp; Trade, June 22, 2016, Bengaluru.</p>    <p class="footnote" align="justify"><a id="F1"></a><sup>2</sup>In <a href="#C2" class="links">Chart 2</a>,
+ the latest negative growth April number may be an aberration because of
+ UDAY bonds being transferred from bank loan books to investments)</p></td>  </tr></tbody></table> </td></tr></tbody></table>
+                            
+                        </div>
+                        <br>
+                        <div align="right">
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="grid_1 archives alpha">
+                <span id="DateSettree_lbltree" style="position: fixed; margin-top: -200px;"><div class="grid_subtree archives alpha" id="treeYearMonth_PR"><div class="accordionButton year" id="btn2019">2019</div><div class="accordionContent month" id="2019" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20190" onclick='GetYearMonth("2019","0")'>All Months</a></li><li><a href="#" id="20191" onclick='GetYearMonth("2019","1")'>January</a></li><li><a href="#" id="20192" onclick='GetYearMonth("2019","2")'>February</a></li><li><a href="#" id="20193" onclick='GetYearMonth("2019","3")'>March</a></li><li><a href="#" id="20194" onclick='GetYearMonth("2019","4")'>April</a></li><li><a href="#" id="20195" onclick='GetYearMonth("2019","5")'>May</a></li><li><a href="#" id="20196" onclick='GetYearMonth("2019","6")'>June</a></li><li><a href="#" id="20197" onclick='GetYearMonth("2019","7")'>July</a></li><li><a href="#" id="20198" onclick='GetYearMonth("2019","8")'>August</a></li><li><a href="#" id="20199" onclick='GetYearMonth("2019","9")'>September</a></li><li><a href="#" id="201910" onclick='GetYearMonth("2019","10")'>October</a></li><li><a href="#" id="201911" onclick='GetYearMonth("2019","11")'>November</a></li><li><a href="#" id="201912" onclick='GetYearMonth("2019","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2018">2018</div><div class="accordionContent month" id="2018" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20180" onclick='GetYearMonth("2018","0")'>All Months</a></li><li><a href="#" id="20181" onclick='GetYearMonth("2018","1")'>January</a></li><li><a href="#" id="20182" onclick='GetYearMonth("2018","2")'>February</a></li><li><a href="#" id="20183" onclick='GetYearMonth("2018","3")'>March</a></li><li><a href="#" id="20184" onclick='GetYearMonth("2018","4")'>April</a></li><li><a href="#" id="20185" onclick='GetYearMonth("2018","5")'>May</a></li><li><a href="#" id="20186" onclick='GetYearMonth("2018","6")'>June</a></li><li><a href="#" id="20187" onclick='GetYearMonth("2018","7")'>July</a></li><li><a href="#" id="20188" onclick='GetYearMonth("2018","8")'>August</a></li><li><a href="#" id="20189" onclick='GetYearMonth("2018","9")'>September</a></li><li><a href="#" id="201810" onclick='GetYearMonth("2018","10")'>October</a></li><li><a href="#" id="201811" onclick='GetYearMonth("2018","11")'>November</a></li><li><a href="#" id="201812" onclick='GetYearMonth("2018","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2017">2017</div><div class="accordionContent month" id="2017" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20170" onclick='GetYearMonth("2017","0")'>All Months</a></li><li><a href="#" id="20171" onclick='GetYearMonth("2017","1")'>January</a></li><li><a href="#" id="20172" onclick='GetYearMonth("2017","2")'>February</a></li><li><a href="#" id="20173" onclick='GetYearMonth("2017","3")'>March</a></li><li><a href="#" id="20174" onclick='GetYearMonth("2017","4")'>April</a></li><li><a href="#" id="20175" onclick='GetYearMonth("2017","5")'>May</a></li><li><a href="#" id="20176" onclick='GetYearMonth("2017","6")'>June</a></li><li><a href="#" id="20177" onclick='GetYearMonth("2017","7")'>July</a></li><li><a href="#" id="20178" onclick='GetYearMonth("2017","8")'>August</a></li><li><a href="#" id="20179" onclick='GetYearMonth("2017","9")'>September</a></li><li><a href="#" id="201710" onclick='GetYearMonth("2017","10")'>October</a></li><li><a href="#" id="201711" onclick='GetYearMonth("2017","11")'>November</a></li><li><a href="#" id="201712" onclick='GetYearMonth("2017","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2016">2016</div><div class="accordionContent month" id="2016" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20160" onclick='GetYearMonth("2016","0")'>All Months</a></li><li><a href="#" id="20161" onclick='GetYearMonth("2016","1")'>January</a></li><li><a href="#" id="20162" onclick='GetYearMonth("2016","2")'>February</a></li><li><a href="#" id="20163" onclick='GetYearMonth("2016","3")'>March</a></li><li><a href="#" id="20164" onclick='GetYearMonth("2016","4")'>April</a></li><li><a href="#" id="20165" onclick='GetYearMonth("2016","5")'>May</a></li><li><a href="#" id="20166" onclick='GetYearMonth("2016","6")'>June</a></li><li><a href="#" id="20167" onclick='GetYearMonth("2016","7")'>July</a></li><li><a href="#" id="20168" onclick='GetYearMonth("2016","8")'>August</a></li><li><a href="#" id="20169" onclick='GetYearMonth("2016","9")'>September</a></li><li><a href="#" id="201610" onclick='GetYearMonth("2016","10")'>October</a></li><li><a href="#" id="201611" onclick='GetYearMonth("2016","11")'>November</a></li><li><a href="#" id="201612" onclick='GetYearMonth("2016","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2015">2015</div><div class="accordionContent month" id="2015" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20150" onclick='GetYearMonth("2015","0")'>All Months</a></li><li><a href="#" id="20151" onclick='GetYearMonth("2015","1")'>January</a></li><li><a href="#" id="20152" onclick='GetYearMonth("2015","2")'>February</a></li><li><a href="#" id="20153" onclick='GetYearMonth("2015","3")'>March</a></li><li><a href="#" id="20154" onclick='GetYearMonth("2015","4")'>April</a></li><li><a href="#" id="20155" onclick='GetYearMonth("2015","5")'>May</a></li><li><a href="#" id="20156" onclick='GetYearMonth("2015","6")'>June</a></li><li><a href="#" id="20157" onclick='GetYearMonth("2015","7")'>July</a></li><li><a href="#" id="20158" onclick='GetYearMonth("2015","8")'>August</a></li><li><a href="#" id="20159" onclick='GetYearMonth("2015","9")'>September</a></li><li><a href="#" id="201510" onclick='GetYearMonth("2015","10")'>October</a></li><li><a href="#" id="201511" onclick='GetYearMonth("2015","11")'>November</a></li><li><a href="#" id="201512" onclick='GetYearMonth("2015","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2014">2014</div><div class="accordionContent month" id="2014" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20140" onclick='GetYearMonth("2014","0")'>All Months</a></li><li><a href="#" id="20141" onclick='GetYearMonth("2014","1")'>January</a></li><li><a href="#" id="20142" onclick='GetYearMonth("2014","2")'>February</a></li><li><a href="#" id="20143" onclick='GetYearMonth("2014","3")'>March</a></li><li><a href="#" id="20144" onclick='GetYearMonth("2014","4")'>April</a></li><li><a href="#" id="20145" onclick='GetYearMonth("2014","5")'>May</a></li><li><a href="#" id="20146" onclick='GetYearMonth("2014","6")'>June</a></li><li><a href="#" id="20147" onclick='GetYearMonth("2014","7")'>July</a></li><li><a href="#" id="20148" onclick='GetYearMonth("2014","8")'>August</a></li><li><a href="#" id="20149" onclick='GetYearMonth("2014","9")'>September</a></li><li><a href="#" id="201410" onclick='GetYearMonth("2014","10")'>October</a></li><li><a href="#" id="201411" onclick='GetYearMonth("2014","11")'>November</a></li><li><a href="#" id="201412" onclick='GetYearMonth("2014","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2013">2013</div><div class="accordionContent month" id="2013" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20130" onclick='GetYearMonth("2013","0")'>All Months</a></li><li><a href="#" id="20131" onclick='GetYearMonth("2013","1")'>January</a></li><li><a href="#" id="20132" onclick='GetYearMonth("2013","2")'>February</a></li><li><a href="#" id="20133" onclick='GetYearMonth("2013","3")'>March</a></li><li><a href="#" id="20134" onclick='GetYearMonth("2013","4")'>April</a></li><li><a href="#" id="20135" onclick='GetYearMonth("2013","5")'>May</a></li><li><a href="#" id="20136" onclick='GetYearMonth("2013","6")'>June</a></li><li><a href="#" id="20137" onclick='GetYearMonth("2013","7")'>July</a></li><li><a href="#" id="20138" onclick='GetYearMonth("2013","8")'>August</a></li><li><a href="#" id="20139" onclick='GetYearMonth("2013","9")'>September</a></li><li><a href="#" id="201310" onclick='GetYearMonth("2013","10")'>October</a></li><li><a href="#" id="201311" onclick='GetYearMonth("2013","11")'>November</a></li><li><a href="#" id="201312" onclick='GetYearMonth("2013","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2012">2012</div><div class="accordionContent month" id="2012" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20120" onclick='GetYearMonth("2012","0")'>All Months</a></li><li><a href="#" id="20121" onclick='GetYearMonth("2012","1")'>January</a></li><li><a href="#" id="20122" onclick='GetYearMonth("2012","2")'>February</a></li><li><a href="#" id="20123" onclick='GetYearMonth("2012","3")'>March</a></li><li><a href="#" id="20124" onclick='GetYearMonth("2012","4")'>April</a></li><li><a href="#" id="20125" onclick='GetYearMonth("2012","5")'>May</a></li><li><a href="#" id="20126" onclick='GetYearMonth("2012","6")'>June</a></li><li><a href="#" id="20127" onclick='GetYearMonth("2012","7")'>July</a></li><li><a href="#" id="20128" onclick='GetYearMonth("2012","8")'>August</a></li><li><a href="#" id="20129" onclick='GetYearMonth("2012","9")'>September</a></li><li><a href="#" id="201210" onclick='GetYearMonth("2012","10")'>October</a></li><li><a href="#" id="201211" onclick='GetYearMonth("2012","11")'>November</a></li><li><a href="#" id="201212" onclick='GetYearMonth("2012","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2011">2011</div><div class="accordionContent month" id="2011" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20110" onclick='GetYearMonth("2011","0")'>All Months</a></li><li><a href="#" id="20111" onclick='GetYearMonth("2011","1")'>January</a></li><li><a href="#" id="20112" onclick='GetYearMonth("2011","2")'>February</a></li><li><a href="#" id="20113" onclick='GetYearMonth("2011","3")'>March</a></li><li><a href="#" id="20114" onclick='GetYearMonth("2011","4")'>April</a></li><li><a href="#" id="20115" onclick='GetYearMonth("2011","5")'>May</a></li><li><a href="#" id="20116" onclick='GetYearMonth("2011","6")'>June</a></li><li><a href="#" id="20117" onclick='GetYearMonth("2011","7")'>July</a></li><li><a href="#" id="20118" onclick='GetYearMonth("2011","8")'>August</a></li><li><a href="#" id="20119" onclick='GetYearMonth("2011","9")'>September</a></li><li><a href="#" id="201110" onclick='GetYearMonth("2011","10")'>October</a></li><li><a href="#" id="201111" onclick='GetYearMonth("2011","11")'>November</a></li><li><a href="#" id="201112" onclick='GetYearMonth("2011","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2010">2010</div><div class="accordionContent month" id="2010" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20100" onclick='GetYearMonth("2010","0")'>All Months</a></li><li><a href="#" id="20101" onclick='GetYearMonth("2010","1")'>January</a></li><li><a href="#" id="20102" onclick='GetYearMonth("2010","2")'>February</a></li><li><a href="#" id="20103" onclick='GetYearMonth("2010","3")'>March</a></li><li><a href="#" id="20104" onclick='GetYearMonth("2010","4")'>April</a></li><li><a href="#" id="20105" onclick='GetYearMonth("2010","5")'>May</a></li><li><a href="#" id="20106" onclick='GetYearMonth("2010","6")'>June</a></li><li><a href="#" id="20107" onclick='GetYearMonth("2010","7")'>July</a></li><li><a href="#" id="20108" onclick='GetYearMonth("2010","8")'>August</a></li><li><a href="#" id="20109" onclick='GetYearMonth("2010","9")'>September</a></li><li><a href="#" id="201010" onclick='GetYearMonth("2010","10")'>October</a></li><li><a href="#" id="201011" onclick='GetYearMonth("2010","11")'>November</a></li><li><a href="#" id="201012" onclick='GetYearMonth("2010","12")'>December</a></li></ul></div><div id="divArchiveMain" class="year" onclick="hideshow('divArchiveSub');" style="cursor: pointer;">Archives</div><div id="divArchiveSub" style="display: none;"><div class="grid_subtree archives alpha" id="treeYearMonth_PR"><div class="accordionButton year" id="btn2009">2009</div><div class="accordionContent month" id="2009" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20090" onclick='GetYearMonth("2009","0")'>All Months</a></li><li><a href="#" id="20091" onclick='GetYearMonth("2009","1")'>January</a></li><li><a href="#" id="20092" onclick='GetYearMonth("2009","2")'>February</a></li><li><a href="#" id="20093" onclick='GetYearMonth("2009","3")'>March</a></li><li><a href="#" id="20094" onclick='GetYearMonth("2009","4")'>April</a></li><li><a href="#" id="20095" onclick='GetYearMonth("2009","5")'>May</a></li><li><a href="#" id="20096" onclick='GetYearMonth("2009","6")'>June</a></li><li><a href="#" id="20097" onclick='GetYearMonth("2009","7")'>July</a></li><li><a href="#" id="20098" onclick='GetYearMonth("2009","8")'>August</a></li><li><a href="#" id="20099" onclick='GetYearMonth("2009","9")'>September</a></li><li><a href="#" id="200910" onclick='GetYearMonth("2009","10")'>October</a></li><li><a href="#" id="200911" onclick='GetYearMonth("2009","11")'>November</a></li><li><a href="#" id="200912" onclick='GetYearMonth("2009","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2008">2008</div><div class="accordionContent month" id="2008" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20080" onclick='GetYearMonth("2008","0")'>All Months</a></li><li><a href="#" id="20081" onclick='GetYearMonth("2008","1")'>January</a></li><li><a href="#" id="20082" onclick='GetYearMonth("2008","2")'>February</a></li><li><a href="#" id="20083" onclick='GetYearMonth("2008","3")'>March</a></li><li><a href="#" id="20084" onclick='GetYearMonth("2008","4")'>April</a></li><li><a href="#" id="20085" onclick='GetYearMonth("2008","5")'>May</a></li><li><a href="#" id="20086" onclick='GetYearMonth("2008","6")'>June</a></li><li><a href="#" id="20087" onclick='GetYearMonth("2008","7")'>July</a></li><li><a href="#" id="20088" onclick='GetYearMonth("2008","8")'>August</a></li><li><a href="#" id="20089" onclick='GetYearMonth("2008","9")'>September</a></li><li><a href="#" id="200810" onclick='GetYearMonth("2008","10")'>October</a></li><li><a href="#" id="200811" onclick='GetYearMonth("2008","11")'>November</a></li><li><a href="#" id="200812" onclick='GetYearMonth("2008","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2007">2007</div><div class="accordionContent month" id="2007" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20070" onclick='GetYearMonth("2007","0")'>All Months</a></li><li><a href="#" id="20071" onclick='GetYearMonth("2007","1")'>January</a></li><li><a href="#" id="20072" onclick='GetYearMonth("2007","2")'>February</a></li><li><a href="#" id="20073" onclick='GetYearMonth("2007","3")'>March</a></li><li><a href="#" id="20074" onclick='GetYearMonth("2007","4")'>April</a></li><li><a href="#" id="20075" onclick='GetYearMonth("2007","5")'>May</a></li><li><a href="#" id="20076" onclick='GetYearMonth("2007","6")'>June</a></li><li><a href="#" id="20077" onclick='GetYearMonth("2007","7")'>July</a></li><li><a href="#" id="20078" onclick='GetYearMonth("2007","8")'>August</a></li><li><a href="#" id="20079" onclick='GetYearMonth("2007","9")'>September</a></li><li><a href="#" id="200710" onclick='GetYearMonth("2007","10")'>October</a></li><li><a href="#" id="200711" onclick='GetYearMonth("2007","11")'>November</a></li><li><a href="#" id="200712" onclick='GetYearMonth("2007","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2006">2006</div><div class="accordionContent month" id="2006" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20060" onclick='GetYearMonth("2006","0")'>All Months</a></li><li><a href="#" id="20061" onclick='GetYearMonth("2006","1")'>January</a></li><li><a href="#" id="20062" onclick='GetYearMonth("2006","2")'>February</a></li><li><a href="#" id="20063" onclick='GetYearMonth("2006","3")'>March</a></li><li><a href="#" id="20064" onclick='GetYearMonth("2006","4")'>April</a></li><li><a href="#" id="20065" onclick='GetYearMonth("2006","5")'>May</a></li><li><a href="#" id="20066" onclick='GetYearMonth("2006","6")'>June</a></li><li><a href="#" id="20067" onclick='GetYearMonth("2006","7")'>July</a></li><li><a href="#" id="20068" onclick='GetYearMonth("2006","8")'>August</a></li><li><a href="#" id="20069" onclick='GetYearMonth("2006","9")'>September</a></li><li><a href="#" id="200610" onclick='GetYearMonth("2006","10")'>October</a></li><li><a href="#" id="200611" onclick='GetYearMonth("2006","11")'>November</a></li><li><a href="#" id="200612" onclick='GetYearMonth("2006","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2005">2005</div><div class="accordionContent month" id="2005" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20050" onclick='GetYearMonth("2005","0")'>All Months</a></li><li><a href="#" id="20051" onclick='GetYearMonth("2005","1")'>January</a></li><li><a href="#" id="20052" onclick='GetYearMonth("2005","2")'>February</a></li><li><a href="#" id="20053" onclick='GetYearMonth("2005","3")'>March</a></li><li><a href="#" id="20054" onclick='GetYearMonth("2005","4")'>April</a></li><li><a href="#" id="20055" onclick='GetYearMonth("2005","5")'>May</a></li><li><a href="#" id="20056" onclick='GetYearMonth("2005","6")'>June</a></li><li><a href="#" id="20057" onclick='GetYearMonth("2005","7")'>July</a></li><li><a href="#" id="20058" onclick='GetYearMonth("2005","8")'>August</a></li><li><a href="#" id="20059" onclick='GetYearMonth("2005","9")'>September</a></li><li><a href="#" id="200510" onclick='GetYearMonth("2005","10")'>October</a></li><li><a href="#" id="200511" onclick='GetYearMonth("2005","11")'>November</a></li><li><a href="#" id="200512" onclick='GetYearMonth("2005","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2004">2004</div><div class="accordionContent month" id="2004" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20040" onclick='GetYearMonth("2004","0")'>All Months</a></li><li><a href="#" id="20041" onclick='GetYearMonth("2004","1")'>January</a></li><li><a href="#" id="20042" onclick='GetYearMonth("2004","2")'>February</a></li><li><a href="#" id="20043" onclick='GetYearMonth("2004","3")'>March</a></li><li><a href="#" id="20044" onclick='GetYearMonth("2004","4")'>April</a></li><li><a href="#" id="20045" onclick='GetYearMonth("2004","5")'>May</a></li><li><a href="#" id="20046" onclick='GetYearMonth("2004","6")'>June</a></li><li><a href="#" id="20047" onclick='GetYearMonth("2004","7")'>July</a></li><li><a href="#" id="20048" onclick='GetYearMonth("2004","8")'>August</a></li><li><a href="#" id="20049" onclick='GetYearMonth("2004","9")'>September</a></li><li><a href="#" id="200410" onclick='GetYearMonth("2004","10")'>October</a></li><li><a href="#" id="200411" onclick='GetYearMonth("2004","11")'>November</a></li><li><a href="#" id="200412" onclick='GetYearMonth("2004","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2003">2003</div><div class="accordionContent month" id="2003" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20030" onclick='GetYearMonth("2003","0")'>All Months</a></li><li><a href="#" id="20031" onclick='GetYearMonth("2003","1")'>January</a></li><li><a href="#" id="20032" onclick='GetYearMonth("2003","2")'>February</a></li><li><a href="#" id="20033" onclick='GetYearMonth("2003","3")'>March</a></li><li><a href="#" id="20034" onclick='GetYearMonth("2003","4")'>April</a></li><li><a href="#" id="20035" onclick='GetYearMonth("2003","5")'>May</a></li><li><a href="#" id="20036" onclick='GetYearMonth("2003","6")'>June</a></li><li><a href="#" id="20037" onclick='GetYearMonth("2003","7")'>July</a></li><li><a href="#" id="20038" onclick='GetYearMonth("2003","8")'>August</a></li><li><a href="#" id="20039" onclick='GetYearMonth("2003","9")'>September</a></li><li><a href="#" id="200310" onclick='GetYearMonth("2003","10")'>October</a></li><li><a href="#" id="200311" onclick='GetYearMonth("2003","11")'>November</a></li><li><a href="#" id="200312" onclick='GetYearMonth("2003","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2002">2002</div><div class="accordionContent month" id="2002" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20020" onclick='GetYearMonth("2002","0")'>All Months</a></li><li><a href="#" id="20021" onclick='GetYearMonth("2002","1")'>January</a></li><li><a href="#" id="20022" onclick='GetYearMonth("2002","2")'>February</a></li><li><a href="#" id="20023" onclick='GetYearMonth("2002","3")'>March</a></li><li><a href="#" id="20024" onclick='GetYearMonth("2002","4")'>April</a></li><li><a href="#" id="20025" onclick='GetYearMonth("2002","5")'>May</a></li><li><a href="#" id="20026" onclick='GetYearMonth("2002","6")'>June</a></li><li><a href="#" id="20027" onclick='GetYearMonth("2002","7")'>July</a></li><li><a href="#" id="20028" onclick='GetYearMonth("2002","8")'>August</a></li><li><a href="#" id="20029" onclick='GetYearMonth("2002","9")'>September</a></li><li><a href="#" id="200210" onclick='GetYearMonth("2002","10")'>October</a></li><li><a href="#" id="200211" onclick='GetYearMonth("2002","11")'>November</a></li><li><a href="#" id="200212" onclick='GetYearMonth("2002","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2001">2001</div><div class="accordionContent month" id="2001" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20010" onclick='GetYearMonth("2001","0")'>All Months</a></li><li><a href="#" id="20011" onclick='GetYearMonth("2001","1")'>January</a></li><li><a href="#" id="20012" onclick='GetYearMonth("2001","2")'>February</a></li><li><a href="#" id="20013" onclick='GetYearMonth("2001","3")'>March</a></li><li><a href="#" id="20014" onclick='GetYearMonth("2001","4")'>April</a></li><li><a href="#" id="20015" onclick='GetYearMonth("2001","5")'>May</a></li><li><a href="#" id="20016" onclick='GetYearMonth("2001","6")'>June</a></li><li><a href="#" id="20017" onclick='GetYearMonth("2001","7")'>July</a></li><li><a href="#" id="20018" onclick='GetYearMonth("2001","8")'>August</a></li><li><a href="#" id="20019" onclick='GetYearMonth("2001","9")'>September</a></li><li><a href="#" id="200110" onclick='GetYearMonth("2001","10")'>October</a></li><li><a href="#" id="200111" onclick='GetYearMonth("2001","11")'>November</a></li><li><a href="#" id="200112" onclick='GetYearMonth("2001","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn2000">2000</div><div class="accordionContent month" id="2000" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="20000" onclick='GetYearMonth("2000","0")'>All Months</a></li><li><a href="#" id="20001" onclick='GetYearMonth("2000","1")'>January</a></li><li><a href="#" id="20002" onclick='GetYearMonth("2000","2")'>February</a></li><li><a href="#" id="20003" onclick='GetYearMonth("2000","3")'>March</a></li><li><a href="#" id="20004" onclick='GetYearMonth("2000","4")'>April</a></li><li><a href="#" id="20005" onclick='GetYearMonth("2000","5")'>May</a></li><li><a href="#" id="20006" onclick='GetYearMonth("2000","6")'>June</a></li><li><a href="#" id="20007" onclick='GetYearMonth("2000","7")'>July</a></li><li><a href="#" id="20008" onclick='GetYearMonth("2000","8")'>August</a></li><li><a href="#" id="20009" onclick='GetYearMonth("2000","9")'>September</a></li><li><a href="#" id="200010" onclick='GetYearMonth("2000","10")'>October</a></li><li><a href="#" id="200011" onclick='GetYearMonth("2000","11")'>November</a></li><li><a href="#" id="200012" onclick='GetYearMonth("2000","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1999">1999</div><div class="accordionContent month" id="1999" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19990" onclick='GetYearMonth("1999","0")'>All Months</a></li><li><a href="#" id="19991" onclick='GetYearMonth("1999","1")'>January</a></li><li><a href="#" id="19992" onclick='GetYearMonth("1999","2")'>February</a></li><li><a href="#" id="19993" onclick='GetYearMonth("1999","3")'>March</a></li><li><a href="#" id="19994" onclick='GetYearMonth("1999","4")'>April</a></li><li><a href="#" id="19995" onclick='GetYearMonth("1999","5")'>May</a></li><li><a href="#" id="19996" onclick='GetYearMonth("1999","6")'>June</a></li><li><a href="#" id="19997" onclick='GetYearMonth("1999","7")'>July</a></li><li><a href="#" id="19998" onclick='GetYearMonth("1999","8")'>August</a></li><li><a href="#" id="19999" onclick='GetYearMonth("1999","9")'>September</a></li><li><a href="#" id="199910" onclick='GetYearMonth("1999","10")'>October</a></li><li><a href="#" id="199911" onclick='GetYearMonth("1999","11")'>November</a></li><li><a href="#" id="199912" onclick='GetYearMonth("1999","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1998">1998</div><div class="accordionContent month" id="1998" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19980" onclick='GetYearMonth("1998","0")'>All Months</a></li><li><a href="#" id="19981" onclick='GetYearMonth("1998","1")'>January</a></li><li><a href="#" id="19982" onclick='GetYearMonth("1998","2")'>February</a></li><li><a href="#" id="19983" onclick='GetYearMonth("1998","3")'>March</a></li><li><a href="#" id="19984" onclick='GetYearMonth("1998","4")'>April</a></li><li><a href="#" id="19985" onclick='GetYearMonth("1998","5")'>May</a></li><li><a href="#" id="19986" onclick='GetYearMonth("1998","6")'>June</a></li><li><a href="#" id="19987" onclick='GetYearMonth("1998","7")'>July</a></li><li><a href="#" id="19988" onclick='GetYearMonth("1998","8")'>August</a></li><li><a href="#" id="19989" onclick='GetYearMonth("1998","9")'>September</a></li><li><a href="#" id="199810" onclick='GetYearMonth("1998","10")'>October</a></li><li><a href="#" id="199811" onclick='GetYearMonth("1998","11")'>November</a></li><li><a href="#" id="199812" onclick='GetYearMonth("1998","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1997">1997</div><div class="accordionContent month" id="1997" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19970" onclick='GetYearMonth("1997","0")'>All Months</a></li><li><a href="#" id="19971" onclick='GetYearMonth("1997","1")'>January</a></li><li><a href="#" id="19972" onclick='GetYearMonth("1997","2")'>February</a></li><li><a href="#" id="19973" onclick='GetYearMonth("1997","3")'>March</a></li><li><a href="#" id="19974" onclick='GetYearMonth("1997","4")'>April</a></li><li><a href="#" id="19975" onclick='GetYearMonth("1997","5")'>May</a></li><li><a href="#" id="19976" onclick='GetYearMonth("1997","6")'>June</a></li><li><a href="#" id="19977" onclick='GetYearMonth("1997","7")'>July</a></li><li><a href="#" id="19978" onclick='GetYearMonth("1997","8")'>August</a></li><li><a href="#" id="19979" onclick='GetYearMonth("1997","9")'>September</a></li><li><a href="#" id="199710" onclick='GetYearMonth("1997","10")'>October</a></li><li><a href="#" id="199711" onclick='GetYearMonth("1997","11")'>November</a></li><li><a href="#" id="199712" onclick='GetYearMonth("1997","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1996">1996</div><div class="accordionContent month" id="1996" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19960" onclick='GetYearMonth("1996","0")'>All Months</a></li><li><a href="#" id="19961" onclick='GetYearMonth("1996","1")'>January</a></li><li><a href="#" id="19962" onclick='GetYearMonth("1996","2")'>February</a></li><li><a href="#" id="19963" onclick='GetYearMonth("1996","3")'>March</a></li><li><a href="#" id="19964" onclick='GetYearMonth("1996","4")'>April</a></li><li><a href="#" id="19965" onclick='GetYearMonth("1996","5")'>May</a></li><li><a href="#" id="19966" onclick='GetYearMonth("1996","6")'>June</a></li><li><a href="#" id="19967" onclick='GetYearMonth("1996","7")'>July</a></li><li><a href="#" id="19968" onclick='GetYearMonth("1996","8")'>August</a></li><li><a href="#" id="19969" onclick='GetYearMonth("1996","9")'>September</a></li><li><a href="#" id="199610" onclick='GetYearMonth("1996","10")'>October</a></li><li><a href="#" id="199611" onclick='GetYearMonth("1996","11")'>November</a></li><li><a href="#" id="199612" onclick='GetYearMonth("1996","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1995">1995</div><div class="accordionContent month" id="1995" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19950" onclick='GetYearMonth("1995","0")'>All Months</a></li><li><a href="#" id="19951" onclick='GetYearMonth("1995","1")'>January</a></li><li><a href="#" id="19952" onclick='GetYearMonth("1995","2")'>February</a></li><li><a href="#" id="19953" onclick='GetYearMonth("1995","3")'>March</a></li><li><a href="#" id="19954" onclick='GetYearMonth("1995","4")'>April</a></li><li><a href="#" id="19955" onclick='GetYearMonth("1995","5")'>May</a></li><li><a href="#" id="19956" onclick='GetYearMonth("1995","6")'>June</a></li><li><a href="#" id="19957" onclick='GetYearMonth("1995","7")'>July</a></li><li><a href="#" id="19958" onclick='GetYearMonth("1995","8")'>August</a></li><li><a href="#" id="19959" onclick='GetYearMonth("1995","9")'>September</a></li><li><a href="#" id="199510" onclick='GetYearMonth("1995","10")'>October</a></li><li><a href="#" id="199511" onclick='GetYearMonth("1995","11")'>November</a></li><li><a href="#" id="199512" onclick='GetYearMonth("1995","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1994">1994</div><div class="accordionContent month" id="1994" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19940" onclick='GetYearMonth("1994","0")'>All Months</a></li><li><a href="#" id="19941" onclick='GetYearMonth("1994","1")'>January</a></li><li><a href="#" id="19942" onclick='GetYearMonth("1994","2")'>February</a></li><li><a href="#" id="19943" onclick='GetYearMonth("1994","3")'>March</a></li><li><a href="#" id="19944" onclick='GetYearMonth("1994","4")'>April</a></li><li><a href="#" id="19945" onclick='GetYearMonth("1994","5")'>May</a></li><li><a href="#" id="19946" onclick='GetYearMonth("1994","6")'>June</a></li><li><a href="#" id="19947" onclick='GetYearMonth("1994","7")'>July</a></li><li><a href="#" id="19948" onclick='GetYearMonth("1994","8")'>August</a></li><li><a href="#" id="19949" onclick='GetYearMonth("1994","9")'>September</a></li><li><a href="#" id="199410" onclick='GetYearMonth("1994","10")'>October</a></li><li><a href="#" id="199411" onclick='GetYearMonth("1994","11")'>November</a></li><li><a href="#" id="199412" onclick='GetYearMonth("1994","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1993">1993</div><div class="accordionContent month" id="1993" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19930" onclick='GetYearMonth("1993","0")'>All Months</a></li><li><a href="#" id="19931" onclick='GetYearMonth("1993","1")'>January</a></li><li><a href="#" id="19932" onclick='GetYearMonth("1993","2")'>February</a></li><li><a href="#" id="19933" onclick='GetYearMonth("1993","3")'>March</a></li><li><a href="#" id="19934" onclick='GetYearMonth("1993","4")'>April</a></li><li><a href="#" id="19935" onclick='GetYearMonth("1993","5")'>May</a></li><li><a href="#" id="19936" onclick='GetYearMonth("1993","6")'>June</a></li><li><a href="#" id="19937" onclick='GetYearMonth("1993","7")'>July</a></li><li><a href="#" id="19938" onclick='GetYearMonth("1993","8")'>August</a></li><li><a href="#" id="19939" onclick='GetYearMonth("1993","9")'>September</a></li><li><a href="#" id="199310" onclick='GetYearMonth("1993","10")'>October</a></li><li><a href="#" id="199311" onclick='GetYearMonth("1993","11")'>November</a></li><li><a href="#" id="199312" onclick='GetYearMonth("1993","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1992">1992</div><div class="accordionContent month" id="1992" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19920" onclick='GetYearMonth("1992","0")'>All Months</a></li><li><a href="#" id="19921" onclick='GetYearMonth("1992","1")'>January</a></li><li><a href="#" id="19922" onclick='GetYearMonth("1992","2")'>February</a></li><li><a href="#" id="19923" onclick='GetYearMonth("1992","3")'>March</a></li><li><a href="#" id="19924" onclick='GetYearMonth("1992","4")'>April</a></li><li><a href="#" id="19925" onclick='GetYearMonth("1992","5")'>May</a></li><li><a href="#" id="19926" onclick='GetYearMonth("1992","6")'>June</a></li><li><a href="#" id="19927" onclick='GetYearMonth("1992","7")'>July</a></li><li><a href="#" id="19928" onclick='GetYearMonth("1992","8")'>August</a></li><li><a href="#" id="19929" onclick='GetYearMonth("1992","9")'>September</a></li><li><a href="#" id="199210" onclick='GetYearMonth("1992","10")'>October</a></li><li><a href="#" id="199211" onclick='GetYearMonth("1992","11")'>November</a></li><li><a href="#" id="199212" onclick='GetYearMonth("1992","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1991">1991</div><div class="accordionContent month" id="1991" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19910" onclick='GetYearMonth("1991","0")'>All Months</a></li><li><a href="#" id="19911" onclick='GetYearMonth("1991","1")'>January</a></li><li><a href="#" id="19912" onclick='GetYearMonth("1991","2")'>February</a></li><li><a href="#" id="19913" onclick='GetYearMonth("1991","3")'>March</a></li><li><a href="#" id="19914" onclick='GetYearMonth("1991","4")'>April</a></li><li><a href="#" id="19915" onclick='GetYearMonth("1991","5")'>May</a></li><li><a href="#" id="19916" onclick='GetYearMonth("1991","6")'>June</a></li><li><a href="#" id="19917" onclick='GetYearMonth("1991","7")'>July</a></li><li><a href="#" id="19918" onclick='GetYearMonth("1991","8")'>August</a></li><li><a href="#" id="19919" onclick='GetYearMonth("1991","9")'>September</a></li><li><a href="#" id="199110" onclick='GetYearMonth("1991","10")'>October</a></li><li><a href="#" id="199111" onclick='GetYearMonth("1991","11")'>November</a></li><li><a href="#" id="199112" onclick='GetYearMonth("1991","12")'>December</a></li></ul></div><div class="accordionButton year" id="btn1990">1990</div><div class="accordionContent month" id="1990" style="display: none;" aria-hidden="true"><ul class="accordionlist"><li><a href="#" id="19900" onclick='GetYearMonth("1990","0")'>All Months</a></li><li><a href="#" id="19901" onclick='GetYearMonth("1990","1")'>January</a></li><li><a href="#" id="19902" onclick='GetYearMonth("1990","2")'>February</a></li><li><a href="#" id="19903" onclick='GetYearMonth("1990","3")'>March</a></li><li><a href="#" id="19904" onclick='GetYearMonth("1990","4")'>April</a></li><li><a href="#" id="19905" onclick='GetYearMonth("1990","5")'>May</a></li><li><a href="#" id="19906" onclick='GetYearMonth("1990","6")'>June</a></li><li><a href="#" id="19907" onclick='GetYearMonth("1990","7")'>July</a></li><li><a href="#" id="19908" onclick='GetYearMonth("1990","8")'>August</a></li><li><a href="#" id="19909" onclick='GetYearMonth("1990","9")'>September</a></li><li><a href="#" id="199010" onclick='GetYearMonth("1990","10")'>October</a></li><li><a href="#" id="199011" onclick='GetYearMonth("1990","11")'>November</a></li><li><a href="#" id="199012" onclick='GetYearMonth("1990","12")'>December</a></li></ul></div></div></div>
+
+
+
+
+            </div>
+        </span></div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <div style="display:none;">Server 214</div>
+<a href="#top" class="scrollToTop" id="backToTop" style="display: inline;">Top</a>
+<footer class="footer">
+<div class="footer">
+  <div class="container_12">
+    <div class="grid_9" style="width:895px !important">
+      <h4><span class="blue">More</span> Links </h4>
+      <div class="grid_2 alpha" style="width:150px !important">
+        <ul class="footerlist">
+          <!--<li><a target="_blank" href="/Scripts/ExternalResearchSchemes.aspx">Research Portal</a></li>-->
+          <li><a target="_blank" href="https://rbi.org.in/FinancialEducation/Home.aspx">Financial Education</a></li>
+	  <li><a target="_blank" href="https://www.rbi.org.in/commonman/English/Scripts/rbikehtahai.aspx">RBI Kehta Hai</a></li>
+          <!--<li class="pbh"><a target="_blank" href="http://www.paisaboltahai.rbi.org.in/">Paisa Bolta Hai</a></li>
+          <li class="rbc"><a target="_blank" href="https://www.rbi.org.in/commonman/English/scripts/rbicautions.aspx">RBI Cautions</a></li>-->
+          <li><a href="https://rbi.org.in/Scripts/FAQDisplay.aspx">FAQs</a></li>
+          <!--<li><a href="/Scripts/Glossary.aspx">Glossary</a></li>-->
+          <li><a href="https://rbi.org.in/Scripts/IFSCMICRDetails.aspx">IFSC/MICR Codes</a></li>
+        </ul>
+      </div>
+      <div class="grid_2 omega" style="width:215px !important;">
+        <ul class="footerlist">
+          <li><a href="https://rbi.org.in/Scripts/BS_ViewTenders.aspx">Tenders</a></li>
+          <li><a target="_blank" href="https://opportunities.rbi.org.in/scripts/index.aspx">Opportunities<font>@</font>RBI</a></li>
+          <!--<li><a target="_blank" href="http://rbirevamp.opportunities.rbi.org.in/Scripts/index.aspx">Career@RBI</a></li>-->
+          <li><a href="https://rbi.org.in/Scripts/HolidayMatrixDisplay.aspx">Bank Holidays</a></li>
+          <li><a href="https://rbi.org.in/Scripts/BS_ViewForms.aspx">Forms</a></li>
+          <li><a target="_blank" href="https://secweb.rbi.org.in/ats/login/Login.do?LANG+english">Application Tracking System</a></li>
+        </ul>
+      </div>
+      <div class="grid_2 alpha omega" style="width:254px !important;">
+        <ul class="footerlist">
+          <li><a href="https://rbi.org.in/Scripts/EventsDisplay.aspx">Events</a></li>
+          <!--<li><a href="/Scripts/PublicEngagement.aspx">Public Speaking Engagements</a></li>-->
+          <li><a href="https://rbi.org.in/Scripts/rbi_clarification.aspx">RBI Clarifications</a></li>
+	  <li><a href="https://rbi.org.in/Scripts/Righttoinfoact.aspx">Right to Information Act</a></li>
+          <li><a href="https://rbi.org.in/Scripts/OtherLinks.aspx">Related Links</a></li>
+	  <li><a href="https://rbi.org.in/scripts/BS_RBIsCorePurpose.aspx">RBI's Core Purpose, Values and Vision</a></li>
+        </ul>
+      </div>
+      <div class="grid_2" style="width:215px !important;">
+        <ul class="footerlist">
+          
+          <li><a href="https://rbi.org.in/Scripts/CitiChart.aspx">Citizens' Charter</a></li>
+          <li><a href="https://rbi.org.in/Scripts/Timlines.aspx">Timelines for Regulatory Approvals</a></li>
+          <li><a href="https://rbi.org.in/Scripts/Complaints.aspx">Complaints</a></li>
+          <li><a href="https://rbi.org.in/Scripts/helpdesk.aspx">Contact Us</a></li>
+	  <li><a href="https://shabdavali.rbi.org.in/">Banking Glossary</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid_3" style="width:135px !important">
+      <h4><span class="blue">Follow</span> RBI </h4>
+      <ul class="footerlist">
+        <li><a href="https://rbi.org.in/Scripts/rss.aspx"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/rss-icon.png" alt="Subscribe to RSS" class="rss">RSS</a></li>
+        <li><a href="https://twitter.com/RBI" target="_blank" class="twitter"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/Twitter_Logo_Blue.png" alt="Follow RBI on Twitter" class="twitter" width="22px" height="22px">Twitter</a></li>
+        <li><a href="https://www.youtube.com/channel/UCIfCOl43tunZVNYafeC4RQA" class="videos" target="_blank"><img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/videos-icon.png" alt="Check RBI Videos" class="videos">Videos</a></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="copyright">
+    <div class="container_12">
+      <div class="grid_6 pull_left">© Reserve Bank of India. All Rights Reserved.</div>
+      <div class="grid_5 pull_right"><a href="https://rbi.org.in/Scripts/sitemap.aspx">Sitemap</a> | <a href="https://rbi.org.in/Scripts/Disclaimer.aspx">Disclaimer</a></div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+
+<!--Welcome note-->
+
+  <div id="boxesWN">
+  <div id="dialogWN" class="window" style="top:100px;">
+  <div> <img src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/Rbinote.jpg" alt="Rbi note" width="60" height="60"> </div>
+   <table class="WelcomeNote">
+   <tbody><tr>
+   <td style="float:right;">
+
+   April 14, 2015
+   </td>
+   </tr>
+    <tr>
+  
+    <td>
+    
+   Dear All
+    </td>
+    </tr>
+     <tr>
+     <td>
+     
+  Welcome to the refurbished site of the Reserve Bank of India. 
+    </td>
+   
+    </tr>
+    <tr>
+    <td>
+    
+  The two most important features of the site are: One, in addition to 
+the default site, the refurbished site also has all the information 
+bifurcated functionwise; two, a much improved search – well, at least we
+ think so but you be the judge. 
+    </td>
+   
+    </tr>
+
+      <tr>
+    <td>
+   With this makeover, we also take a small step into social media. We 
+will now use Twitter (albeit one way) to send out alerts on the 
+announcements we make and YouTube to place in public domain our press 
+conferences, interviews of our top management, events, such as, town 
+halls and of course, some films aimed at consumer literacy.  
+    </td>
+   
+    </tr>
+    <tr>
+    <td>
+    The site can be accessed through most browsers and devices; it also meets accessibility standards. 
+    </td>
+    </tr>
+    <tr>
+    <td>
+    Please save the url of the refurbished site in your favourites as we
+ will give up the existing site shortly and register or re-register 
+yourselves for receiving RSS feeds for uninterrupted alerts from the 
+Reserve Bank. 
+    </td>
+    </tr>
+    <tr>
+    <td>
+    Do feel free to give us your feedback by clicking on the feedback button on the right hand corner of the refurbished site. 
+    </td>
+    </tr>
+    <tr>
+    <td>
+    Thank you for your continued support.<br><br>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <strong>
+    Department of Communication <br>
+Reserve Bank of India</strong>
+
+    </td>
+    </tr>
+	<tr><td id="popupfootWN"><a href="#" class="close agree" style="float:right">Next</a></td></tr>
+    </tbody></table>
+   <!-- <div id="popupfootWN"> <a href="#" class="close agree" style="float:right" >Next</a>    </div>--><!--<img src="../images/button_close.gif" alt="Close" class="close agree" />-->
+  </div>
+  <div id="maskWN" style="width:100% !important"></div>
+
+<!--<div id="feedbackbtn"><a href="#"><div align="center" class="feedbacktext">Feedback</div></a></div>-->
+
+</div>
+</div>
+</footer>
+<!--<script type="text/javascript" src="/js/URLchange.js"></script>-->
+<!-- For live comment out below line.-->
+
+<script src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/ReplaceURL.js" type="text/javascript"></script>
+<script src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/jquery_002.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript">
+
+
+    //this is for floating TOP link
+    
+    $(document).ready(function () {
+
+        var offset = 230;
+        var duration = 500;
+
+
+        jQuery(window).scroll(function () {
+            if (jQuery(this).scrollTop() > offset) {
+                jQuery('.scrollToTop').fadeIn(duration);
+                // $('#backToTop').css('right', (diffWidth / 2) - 6);
+            } else {
+                jQuery('.scrollToTop').fadeOut(duration);
+                //  $('#backToTop').css('right', (diffWidth / 2) - 6);
+            }
+        });
+
+        //        $('a[href*=#]:not([href=#])').click(function () {
+
+        //            if (location.pathname.replace(/^\//, '') == window.location.pathname.replace(/^\//, '') && location.hostname == window.location.hostname) {
+
+        //                var target = $(this.hash);
+        //                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        //                if (target.length) {
+        //                    $('html,body').animate({
+        //                        scrollTop: target.offset().top
+        //                    }, 800);
+        //                    return false;
+        //                }
+        //            }
+        //        });
+
+        $('.scrollToTop').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 800);
+            return false;
+        });
+    });
+
+
+    //Below code is for floating left panel and floating tree structure
+    //first if condition is for functionwise pages and 2nd one for rest all
+    $(window).scroll(function () {
+
+        if ($('div.banner2').length) {
+
+            if ($(window).scrollTop() >= 265) {
+                $('#menubar').css("position", "fixed");
+                $('#menubar').css("width", "240px");
+                $('#menubar').css("margin-top", "-281px");
+                $('.content_area').css("margin-left", "252px");
+
+                $('.sidebar_nav').css("position", "fixed");
+                $('.sidebar_nav').css("margin-top", "-200px");
+                $('.sidebar_nav').css("width", "236px");
+
+
+                $('#DateSettree_lbltree').css('position', 'fixed');
+                $('#DateSettree_lbltree').css('margin-top', '-281px');
+
+            }
+
+            else {
+                $('#menubar').css("position", "");
+                $('#menubar').css("width", "");
+                $('#menubar').css("margin-top", "");
+                $('.content_area').css("margin-left", "");
+
+                $('.sidebar_nav').css("position", "");
+                $('.sidebar_nav').css("margin-top", "");
+                $('.sidebar_nav').css("width", "");
+
+
+
+                $('#DateSettree_lbltree').css('position', '');
+                $('#DateSettree_lbltree').css('margin-top', '');
+            }
+
+        }
+
+        else if ($(window).scrollTop() >= 185) {
+            $('#menubar').css("position", "fixed");
+            $('#menubar').css("width", "240px");
+            $('#menubar').css("margin-top", "-200px");
+            $('.content_area').css("margin-left", "252px");
+
+            $('.sidebar_nav').css("position", "fixed");
+            $('.sidebar_nav').css("margin-top", "-200px");
+            $('.sidebar_nav').css("width", "236px");
+
+
+            $('#DateSettree_lbltree').css('position', 'fixed');
+            $('#DateSettree_lbltree').css('margin-top', '-200px');
+
+        }
+
+        else {
+            $('#menubar').css("position", "");
+            $('#menubar').css("width", "");
+            $('#menubar').css("margin-top", "");
+            $('.content_area').css("margin-left", "");
+
+            $('.sidebar_nav').css("position", "");
+            $('.sidebar_nav').css("margin-top", "");
+            $('.sidebar_nav').css("width", "");
+
+
+            $('#DateSettree_lbltree').css('position', '');
+            $('#DateSettree_lbltree').css('margin-top', '');
+        }
+//        if ($(window).scrollTop() >= 235) {
+
+//            $('#DateSettree_lbltree').css('height', '183px');
+//            $('#DateSettree_lbltree').css('overflow-y', 'scroll');
+//            $('#DateSettree_lbltree').css('width', '100px');
+
+//        }
+//        else {
+//            $('#DateSettree_lbltree').css('height', '');
+//            $('#DateSettree_lbltree').css('overflow-y', '');
+//            $('#DateSettree_lbltree').css('width', '');
+
+//        }
+
+       
+    });
+	
+       // $(window).unload(function () {
+       //     $.cookies.del('feedback_Cookie'); 
+       // });
+    $(document).ready(function () {
+	
+	
+		  $('.window .close').click(function (e) {
+            //Cancel the link behavior
+            e.preventDefault();
+            $.cookie('feedback_Cookie', 'Yes', { expires: 365, path: '/' });
+            $('#maskWN').hide();
+            $('.window').hide();
+            var scroll = $(window).scrollTop();
+            $("html").scrollTop(scroll);
+        });
+		
+		 $('#maskWN').click(function () {
+            $(this).hide();
+            $.cookie('feedback_Cookie', 'Yes', { expires: 365, path: '/' });
+            $('.window').hide();
+
+        });
+
+        //        if ($.cookie('feedback_Cookie') == null) {
+        //            var id = '#dialog';
+
+        //            //Get the screen height and width
+        //            var maskHeight = $(document).height();
+        //            var maskWidth = $(window).width();
+        //           
+
+        //            //Set heigth and width to mask to fill up the whole screen
+        //            $('#mask').css({ 'width': '100%', 'height': '100%','position':'fixed' });
+
+        //            //transition effect
+        //            $('#mask').fadeIn(500);
+        //            $('#mask').fadeTo("slow", 0.9);
+
+        //            //Get the window height and width
+        //            var winH = $(window).height();
+        //            var winW = $(window).width();
+
+        //            //Set the popup window to center
+        //            $(id).css('top', winH / 2 - $(id).height() / 2);
+        //            $(id).css('left', winW / 2 - $(id).width() / 2);
+
+        //            //transition effect
+        //            $(id).fadeIn(2000);
+
+
+
+        //        }
+//        $('blockquote p').css('margin','auto');
+//        $('blockquote blockquote blockquote p').contents().contents().unwrap();
+//        $('blockquote blockquote blockquote').contents().unwrap();
+//        $('blockquote blockquote').contents().unwrap();
+//        $('blockquote').contents().unwrap();
+        
+
+        //if close button is clicked
+        $('.window .close').click(function (e) {
+            //Cancel the link behavior
+            e.preventDefault();
+            $.cookie('feedback_Cookie', 'Yes', { expires: 365, path: '/' });
+            $('#mask').hide();
+            $('.window').hide();
+            var scroll = $(window).scrollTop();
+            $("html").scrollTop(scroll);
+        });
+
+        //if mask is clicked
+        $('#mask').click(function () {
+            $(this).hide();
+            $('.window').hide();
+        });
+        $('#feedbackbtn').click(function () {
+            var id = '#dialog';
+
+            //Get the screen height and width
+            var maskHeight = $(document).height();
+            var maskWidth = $(window).width();
+
+            //Set heigth and width to mask to fill up the whole screen
+            //$('#mask').css({ 'width': maskWidth, 'height': maskHeight });
+            $('#mask').css({ 'width': '100%', 'height': '100%', 'position': 'fixed' });
+
+            //transition effect
+            $('#mask').fadeIn(500);
+            $('#mask').fadeTo("slow", 0.9);
+
+            //Get the window height and width
+            var winH = $(window).height();
+            var winW = $(window).width();
+
+            //Set the popup window to center
+            $(id).css('top', winH / 2 - $(id).height() / 2);
+            $(id).css('left', winW / 2 - $(id).width() / 2);
+
+            //transition effect
+            $(id).fadeIn(2000);
+        });
+
+        $('.submit').click(function () {
+            var Name = $("[id*=txtFeedbackName]").val();
+            var Email = $("[id*=txtFeedbackEmail]").val();
+            var Comments = $("[id*=txtFeedbackComments]").val();
+            if (Name == "") {
+
+                alert("Please enter your name");
+                $("[id*=txtFeedbackName]").focus();
+                return false;
+            }
+            else if (Email == "") {
+                alert("Please enter your email");
+                $("[id*=txtFeedbackEmail]").focus();
+                return false;
+            }
+            else if (Email != "" && !ValidateEmail(Email)) {
+                alert("Please enter a valid email address");
+                $("[id*=txtFeedbackEmail]").focus();
+                return false;
+            }
+
+            else if (Comments == "") {
+
+                alert("Please enter some comments");
+                $("[id*=txtFeedbackComments]").focus();
+                return false;
+            }
+
+            else {
+                $('[id*=Button1]').attr('disabled', 'disabled');
+
+                var param = { Name: Name, EmailID: Email, Comments: Comments };
+                $.ajax({
+                    type: "POST",
+                    url: "../Home.aspx/SaveFeedback",
+                    data: JSON.stringify(param),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+
+                    success: function (response) {
+
+                        if (response.d == "0") {
+                            alert("Thank you for your feedback");
+                            $.cookie('feedback_Cookie', 'Yes', { expires: 365, path: '/' });
+                            $('#mask').hide();
+                            $('.window').hide();
+                            $('[id*=Button1]').removeAttr('disabled');
+                            $("[id*=txtFeedbackName]").val("");
+                            $("[id*=txtFeedbackEmail]").val("");
+                            $("[id*=txtFeedbackComments]").val("");
+                        }
+                        else {
+                            alert("Please try again");
+                            $('[id*=Button1]').removeAttr('disabled');
+
+
+                        }
+
+                    }
+                });
+            }
+
+        });
+
+        function ValidateEmail(email) {
+            var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            return expr.test(email);
+        };
+
+        //        $('#divArchiveMain').click(function () {
+        //            
+        //            if ($(window).scrollTop() >= 235) {
+
+        //                $('#DateSettree_lbltree').css('height', '181px');
+        //                $('#DateSettree_lbltree').css('overflow-y', 'scroll');
+        //                $('#DateSettree_lbltree').css('width', '100px');
+
+        //            }
+        //            else {
+        //                $('#DateSettree_lbltree').css('height', '');
+        //                $('#DateSettree_lbltree').css('overflow-y', '');
+        //                $('#DateSettree_lbltree').css('width', '');
+
+        //            }
+        //        });
+
+        $('a.style1').each(function () {
+
+            var $this = $(this);
+            var aHref = $this.attr('class');
+            $this.attr('class', aHref.replace('style1', 'links'));
+        });
+    });
+
+</script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61369961-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/plugins.js"></script>
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/script.js"></script>
+<script type="text/javascript" src="Reserve%20Bank%20of%20India%20-%20Speeches_3_files/Scroll.js"></script>
+<script type="text/javascript" language="javascript">
+
+    DoubleScrollWithTree(document.getElementById('doublescroll'));
+    function GetYearMonth(year, month) {
+        document.getElementById("hdnYear").value = year;
+        document.getElementById("hdnMonth").value = month;
+        document.getElementById("btn").click();
+    }
+    //Implemented onlick for 'archives' link in tree structure
+    function hideshow(divArchive) {
+        if (!document.getElementById(divArchive))
+            return
+        if (document.getElementById(divArchive).style.display == "block")
+            document.getElementById(divArchive).style.display = "none"
+        else
+            document.getElementById(divArchive).style.display = "block"
+    }
+    function SetTreeStyles() {
+        var strYear = document.getElementById("hdnYear").value;
+        var strMonth = document.getElementById("hdnMonth").value
+        if (strYear != "") {
+            var toDay = new Date();
+            document.getElementById("btn" + strYear).setAttribute("class", "accordionButton year active_year");
+            document.getElementById(strYear).style.display = "block"
+            if (strMonth) document.getElementById(strYear + strMonth).setAttribute("class", "active");
+            if (toDay.getFullYear() - 9 > parseInt(strYear)) { document.getElementById("divArchiveSub").style.display = "block" }
+        }
+    }
+</script>
+</div></form><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 1; top: 0px; left: 0px; display: none;"></ul></body></html>
